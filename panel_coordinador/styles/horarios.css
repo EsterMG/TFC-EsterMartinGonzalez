@@ -1,0 +1,1224 @@
+/* HORARIOS.CSS — Layout, Gantt, Calendario, Popups */
+
+/* Layout */
+.hor-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+@media(max-width:860px) {
+  .hor-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* CALENDARIO */
+.cal-card {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  overflow: hidden;
+  position: sticky;
+  top: 20px;
+}
+
+.cal-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--borde);
+}
+
+.cal-nav button {
+  background: none;
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cal-nav button:hover {
+  border-color: #aaa;
+}
+
+.cal-mes {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.cal-dow {
+  text-align: center;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--suave);
+  padding: 5px 0;
+  border-bottom: 1px solid var(--borde);
+}
+
+.cal-dia {
+  border-right: 1px solid var(--borde);
+  border-bottom: 1px solid var(--borde);
+  padding: 4px;
+  min-height: 46px;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.cal-dia:nth-child(7n) {
+  border-right: none;
+}
+
+.cal-dia:hover:not(.vacio) {
+  background: #f5f5f5;
+}
+
+.cal-dia.hoy {
+  background: #f0f7ff;
+}
+
+.cal-dia.sel {
+  background: var(--texto) !important;
+}
+
+.cal-dia.sel .cal-num {
+  color: #fff !important;
+}
+
+.cal-dia.vacio {
+  background: var(--fondo);
+  cursor: default;
+  pointer-events: none;
+}
+
+.cal-num {
+  font-size: 10px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.cal-dia.vacio .cal-num {
+  color: var(--borde);
+}
+
+.cal-mini {
+  font-size: 8px;
+  font-weight: 600;
+  padding: 1px 4px;
+  border-radius: 2px;
+  display: inline-block;
+  margin-top: 1px;
+}
+
+.cal-mini.ok {
+  background: #DCFCE7;
+  color: #166534;
+}
+
+.cal-mini.pend {
+  background: #FEF3C7;
+  color: #92400e;
+}
+
+.cal-mini.vacio-t {
+  background: #EEF3FB;
+  color: #1a5fa8;
+}
+
+/* GANTT */
+.gantt-card {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.gantt-head {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--borde);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.g-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.g-nav a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--suave);
+  font-size: 13px;
+}
+
+.g-nav a:hover {
+  border-color: #aaa;
+  color: var(--texto);
+}
+
+.g-lbl {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.leyenda {
+  display: flex;
+  gap: 10px;
+  font-size: 10px;
+  color: var(--suave);
+}
+
+.leyenda span {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.leyenda i {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+}
+
+/* Pestañas de control */
+.ctrl-tabs {
+  display: flex;
+  gap: 6px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--borde);
+  flex-wrap: wrap;
+  background: var(--blanco);
+}
+
+.ctrl-tab {
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--suave);
+  cursor: pointer;
+  border: 1.5px solid var(--borde);
+  border-radius: 20px;
+  white-space: nowrap;
+  transition: all 0.15s;
+  user-select: none;
+  background: var(--fondo);
+}
+
+.ctrl-tab:hover {
+  border-color: #aaa;
+  color: var(--texto);
+}
+
+.ctrl-tab.activa {
+  background: #1a5fa8 !important;
+  color: #fff !important;
+  border-color: #1a5fa8 !important;
+}
+
+.ctrl-tab-con-datos {
+  background: #dbeafe;
+  color: #1e40af;
+  border-color: #93c5fd;
+  font-weight: 700;
+}
+
+.gantt-scroll {
+  overflow-x: auto;
+}
+
+.g-inner {
+  min-width: 560px;
+}
+
+.g-hdr {
+  display: flex;
+  border-bottom: 2px solid #dde4f0;
+}
+
+.g-col {
+  width: 130px;
+  flex-shrink: 0;
+  border-right: 2px solid var(--borde);
+}
+
+.g-horas {
+  flex: 1;
+  position: relative;
+  height: 22px;
+}
+
+/* Fila control (azul) */
+.g-fila-ctrl {
+  display: flex;
+  border-bottom: 2px solid #b8cce8;
+  background: #EEF3FB;
+}
+
+.g-fila-ctrl .glbl {
+  width: 130px;
+  flex-shrink: 0;
+  padding: 5px 9px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #1a5fa8;
+  border-right: 2px solid #c8d8f0;
+  display: flex;
+  align-items: center;
+}
+
+.g-fila-ctrl .gcel {
+  flex: 1;
+  position: relative;
+  height: 26px;
+}
+
+/* Fila puesto */
+.g-fila-p {
+  display: flex;
+  border-bottom: 2px solid #d0d0d0;
+}
+
+.g-fila-p:last-child {
+  border-bottom: none;
+}
+
+.g-fila-p:nth-child(even) .glbl,
+.g-fila-p:nth-child(even) .gcel {
+  background: #fafaf8;
+}
+
+.g-fila-p .glbl {
+  width: 130px;
+  flex-shrink: 0;
+  padding: 4px 9px;
+  font-size: 10px;
+  font-weight: 600;
+  border-right: 2px solid var(--borde);
+  display: flex;
+  align-items: center;
+}
+
+.g-fila-p .gcel {
+  flex: 1;
+  position: relative;
+  min-height: 56px;
+}
+
+/* Líneas verticales de hora */
+.gv {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-left: 1px solid;
+}
+
+/* Preview de drag */
+.g-drag-preview {
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  background: rgba(26, 95, 168, 0.15);
+  border: 2px dashed #1a5fa8;
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Barras */
+.barra {
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  font-size: 9px;
+  font-weight: 600;
+  padding: 0 6px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.barra:hover {
+  filter: brightness(0.92);
+}
+
+.b-prog {
+  background: #1a5fa8;
+  color: #fff;
+  cursor: default;
+}
+
+.b-sin {
+  background: #e5e7eb;
+  border: 1px solid #d1d5db;
+  color: #6b7280;
+}
+
+/* Colores por puesto (índice 0-11) */
+.b-cub[data-puesto-idx="0"] {
+  background: #DBEAFE;
+  color: #1e40af;
+  border: 1px solid #93C5FD;
+}
+
+/* JEFE */
+.b-cub[data-puesto-idx="1"] {
+  background: #D1FAE5;
+  color: #065F46;
+  border: 1px solid #6EE7B7;
+}
+
+/* MEZCLA */
+.b-cub[data-puesto-idx="2"] {
+  background: #FEF3C7;
+  color: #78350F;
+  border: 1px solid #FCD34D;
+}
+
+/* SONIDO */
+.b-cub[data-puesto-idx="3"] {
+  background: #FCE7F3;
+  color: #831843;
+  border: 1px solid #F9A8D4;
+}
+
+/* CCU */
+.b-cub[data-puesto-idx="4"] {
+  background: #EDE9FE;
+  color: #4C1D95;
+  border: 1px solid #C4B5FD;
+}
+
+/* ILUMINA */
+.b-cub[data-puesto-idx="5"] {
+  background: #DCFCE7;
+  color: #14532D;
+  border: 1px solid #86EFAC;
+}
+
+/* EVS */
+.b-cub[data-puesto-idx="6"] {
+  background: #FFF7ED;
+  color: #9A3412;
+  border: 1px solid #FDBA74;
+}
+
+/* MULTIPLAY */
+.b-cub[data-puesto-idx="7"] {
+  background: #F0F9FF;
+  color: #0C4A6E;
+  border: 1px solid #7DD3FC;
+}
+
+/* ROTULO */
+.b-cub[data-puesto-idx="8"] {
+  background: #F0FDF4;
+  color: #166534;
+  border: 1px solid #4ADE80;
+}
+
+/* PROMPT */
+.b-cub[data-puesto-idx="9"] {
+  background: #FFF1F2;
+  color: #9F1239;
+  border: 1px solid #FDA4AF;
+}
+
+/* PRIMERA */
+.b-cub[data-puesto-idx="10"] {
+  background: #ECFEFF;
+  color: #164E63;
+  border: 1px solid #67E8F9;
+}
+
+/* CAMARA */
+.b-cub[data-puesto-idx="11"] {
+  background: #F5F3FF;
+  color: #3730A3;
+  border: 1px solid #A5B4FC;
+}
+
+/* AUXILIAR */
+.b-cub {
+  background: #DBEAFE;
+  color: #1e40af;
+  border: 1px solid #93C5FD;
+}
+
+/* fallback */
+
+.g-empty {
+  padding: 36px;
+  text-align: center;
+  color: var(--suave);
+  font-size: 12px;
+}
+
+.g-empty strong {
+  display: block;
+  font-size: 13px;
+  color: var(--texto);
+  margin-bottom: 4px;
+}
+
+/* POPUPS */
+.ov {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 300;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(2px);
+}
+
+.ov.open {
+  display: flex;
+}
+
+.pop {
+  background: var(--blanco);
+  border-radius: 14px;
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+  margin: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+  animation: popIn .13s ease both;
+  max-height: 92vh;
+  overflow-y: auto;
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(.96) translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.pop-tit {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.pop-sub {
+  font-size: 11px;
+  color: var(--suave);
+  margin-bottom: 12px;
+}
+
+.pop-f {
+  margin-bottom: 10px;
+}
+
+.pop-f label {
+  display: block;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  color: #666;
+  margin-bottom: 3px;
+}
+
+.pop-f select,
+.pop-f input[type=time] {
+  width: 100%;
+  background: var(--fondo);
+  border: 1.5px solid var(--borde);
+  border-radius: 8px;
+  padding: 8px 11px;
+  font-size: 13px;
+  color: var(--texto);
+  outline: none;
+}
+
+.pop-f select:focus,
+.pop-f input:focus {
+  border-color: var(--texto);
+}
+
+.pop-r2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+}
+
+.pop-btns {
+  display: flex;
+  gap: 7px;
+  margin-top: 11px;
+}
+
+.pop-c {
+  flex: 1;
+  padding: 9px;
+  background: var(--fondo);
+  border: 1.5px solid var(--borde);
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.pop-c:hover {
+  border-color: var(--texto);
+}
+
+.pop-s {
+  flex: 2;
+  padding: 9px;
+  background: var(--texto);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pop-s:hover {
+  background: #333;
+}
+
+.pop-del {
+  padding: 9px 12px;
+  background: #FEF2F2;
+  color: #DC2626;
+  border: 1.5px solid #FECACA;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.pop-del:hover {
+  background: #FEE2E2;
+}
+
+/* Lista trabajadores */
+.wk-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 3px;
+}
+
+.wk-sep {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .7px;
+  color: var(--suave);
+  padding: 5px 8px 1px;
+  opacity: .7;
+}
+
+.wk-opt {
+  display: flex;
+  align-items: center;
+  padding: 6px 9px;
+  border-radius: 7px;
+  border: 1.5px solid var(--borde);
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 500;
+  gap: 6px;
+  transition: border-color .12s, background .12s;
+}
+
+.wk-opt:hover {
+  border-color: var(--texto);
+  background: var(--fondo);
+}
+
+.wk-opt.wk-sel {
+  border-color: var(--texto);
+  background: var(--fondo);
+  outline: 2px solid var(--texto);
+  outline-offset: -1px;
+}
+
+.wk-opt.wk-busy {
+  color: var(--suave);
+  opacity: .6;
+}
+
+.wk-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--borde);
+}
+
+.wk-dot.libre {
+  background: #16A34A;
+}
+
+.wk-badge {
+  font-size: 9px;
+  color: var(--suave);
+  white-space: nowrap;
+  margin-left: auto;
+}
+
+/* Info turno en popup editar */
+.turno-info {
+  background: var(--fondo);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.turno-info-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.turno-info-row:last-child {
+  margin-bottom: 0;
+}
+
+.pop-time-sel {
+  width: 100%;
+  background: var(--fondo);
+  border: 1.5px solid var(--borde);
+  border-radius: 8px;
+  padding: 8px 11px;
+  font-size: 13px;
+  color: var(--texto);
+  outline: none;
+}
+
+.pop-time-sel:focus {
+  border-color: var(--texto);
+}
+
+.cal-fest {
+  background: rgba(217, 119, 6, 0.15) !important;
+  color: var(--aviso) !important;
+  border: 1px solid rgba(217, 119, 6, 0.3) !important;
+}
+
+.btn-aviso {
+  background: var(--aviso);
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-aviso:hover {
+  background: #b45309;
+}
+
+/* Barra de navegación */
+.hor-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.cal-btn-grande {
+  padding: 8px 16px !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  gap: 8px !important;
+}
+
+.badge-festivo {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.badge-fs {
+  background: rgba(217, 119, 6, 0.15);
+  color: var(--aviso);
+}
+
+.badge-fd {
+  background: rgba(29, 78, 216, 0.1);
+  color: #1e40af;
+}
+
+.nav-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--suave);
+  font-size: 16px;
+  transition: border-color .15s;
+}
+
+.nav-arrow:hover {
+  border-color: #aaa;
+  color: var(--texto);
+}
+
+.nav-hoy {
+  font-size: 12px;
+  padding: 0 12px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--suave);
+  transition: border-color .15s;
+}
+
+.nav-hoy:hover {
+  border-color: #aaa;
+  color: var(--texto);
+}
+
+/* Botón limpiar control */
+.btn-limpiar {
+  background: rgba(220, 38, 38, 0.08);
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  border-radius: 5px;
+  padding: 1px 5px;
+  font-size: 8px;
+  color: #dc2626;
+  cursor: pointer;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.btn-limpiar:hover {
+  background: rgba(220, 38, 38, 0.15);
+}
+
+/* Celda vacía del control */
+.gcel-vacio {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  font-size: 9px;
+  color: #aaa;
+  cursor: pointer;
+  font-style: italic;
+}
+
+.pop-cal {
+  background: var(--blanco);
+  border-radius: 14px;
+  padding: 0;
+  width: calc(100vw - 260px);
+  max-width: calc(100vw - 260px);
+  max-height: calc(100vh - 80px);
+  margin: 16px;
+  margin-left: 10px;
+  margin-right: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+  animation: popIn .13s ease both;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.pop-cal .cal-grid {
+  overflow-y: auto;
+  flex: 1;
+}
+
+#ovCalendario {
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-top: 70px;
+  padding-right: 16px;
+}
+
+.pop-cal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--borde);
+}
+
+.cal-mes-btn {
+  background: none;
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cal-mes-btn:hover {
+  border-color: #aaa;
+}
+
+.cal-mes-titulo {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Días del calendario más grandes */
+.cal-dia {
+  min-height: 70px !important;
+}
+
+.cal-num {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+/* Nombres de programas en el calendario */
+.cal-prog-nombre {
+  font-size: 12px;
+  font-weight: 600;
+  color: #1a5fa8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  margin-top: 1px;
+  padding: 0 1px;
+}
+
+/* Modo info calendario */
+.cal-modo-info {
+  display: none;
+  padding: 6px 14px;
+  font-size: 11px;
+  color: var(--suave);
+  background: var(--fondo);
+  border-bottom: 1px solid var(--borde);
+}
+
+/* Handles de barra */
+.barra-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  cursor: ew-resize;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity .15s;
+}
+
+.barra:hover .barra-handle {
+  opacity: 1;
+}
+
+.barra-handle-ini {
+  left: 0;
+  border-radius: 4px 0 0 4px;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.barra-handle-fin {
+  right: 0;
+  border-radius: 0 4px 4px 0;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* Botón de fecha/calendario */
+.cal-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: var(--blanco);
+  border: 1.5px solid var(--borde);
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--texto);
+  transition: border-color .15s;
+}
+
+.cal-btn:hover {
+  border-color: #aaa;
+}
+
+/* Modos festivo/fin semana calendario */
+.cal-modo-btns {
+  display: flex;
+  gap: 8px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--borde);
+  background: var(--fondo);
+}
+
+.cal-modo-btn {
+  flex: 1;
+  padding: 7px 0;
+  border-radius: 8px;
+  border: 2px solid var(--borde);
+  background: var(--blanco);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+  color: var(--suave);
+}
+
+.cal-modo-btn:hover {
+  border-color: #aaa;
+  color: var(--texto);
+}
+
+.cal-modo-btn.activo-fs {
+  background: rgba(217, 119, 6, 0.12);
+  border-color: var(--aviso);
+  color: var(--aviso);
+}
+
+.cal-modo-btn.activo-fd {
+  background: rgba(29, 78, 216, 0.1);
+  border-color: #1e40af;
+  color: #1e40af;
+}
+
+.cal-dia.dia-fs {
+  background: rgba(217, 119, 6, 0.08);
+}
+
+.cal-dia.dia-fd {
+  background: rgba(29, 78, 216, 0.07);
+}
+
+.cal-mini.cal-fest {
+  background: rgba(217, 119, 6, 0.15) !important;
+  color: var(--aviso) !important;
+  border: 1px solid rgba(217, 119, 6, 0.3) !important;
+}
+
+.cal-mini.cal-fd {
+  background: rgba(29, 78, 216, 0.12) !important;
+  color: #1e40af !important;
+  border: 1px solid rgba(29, 78, 216, 0.25) !important;
+}
+
+@media (max-width: 768px) {
+
+  .hor-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .pop-cal {
+    width: calc(100vw - 32px);
+    max-width: calc(100vw - 32px);
+    margin: 16px;
+  }
+
+  #ovCalendario {
+    padding-top: 60px;
+    padding-right: 16px;
+    justify-content: center;
+  }
+
+  .ctrl-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .gantt-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .g-inner {
+    min-width: 500px;
+  }
+
+  .g-col {
+    width: 90px;
+  }
+
+  .leyenda {
+    display: none;
+  }
+
+}
+
+/* Layout con panel lateral cuando hay solicitud activa */
+.body {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 16px;
+  align-items: start;
+}
+
+.hor-main {
+  min-width: 0;
+}
+
+.sol-panel {
+  position: sticky;
+  top: 80px;
+  background: var(--blanco);
+  border: 2px solid #3B82F6;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.sol-panel-head {
+  background: #EFF6FF;
+  border-bottom: 1px solid #BFDBFE;
+  padding: 12px 14px;
+}
+
+.sol-panel-head h3 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e40af;
+  margin-bottom: 2px;
+}
+
+.sol-panel-head p {
+  font-size: 11px;
+  color: #3B82F6;
+}
+
+.sol-panel-body {
+  padding: 12px 14px;
+}
+
+.sol-puesto-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--borde);
+  gap: 8px;
+}
+
+.sol-puesto-row:last-child {
+  border-bottom: none;
+}
+
+.sol-puesto-nombre {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.sol-puesto-emp {
+  font-size: 11px;
+  color: var(--suave);
+}
+
+.sol-fechas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 10px 14px;
+  border-top: 1px solid var(--borde);
+}
+
+.sol-fecha-btn {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 5px;
+  text-decoration: none;
+  border: 1px solid var(--borde);
+  color: var(--texto);
+  background: var(--fondo);
+  transition: all 0.1s;
+}
+
+.sol-fecha-btn:hover {
+  border-color: #3B82F6;
+  color: #1e40af;
+}
+
+.sol-fecha-btn.activa {
+  background: #1e40af;
+  color: #fff;
+  border-color: #1e40af;
+}
+
+.sol-progreso {
+  padding: 8px 14px;
+  border-top: 1px solid var(--borde);
+}
+
+.sol-progreso-bar {
+  height: 6px;
+  background: var(--fondo);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.sol-progreso-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s;
+}
+
+@media (max-width: 900px) {
+  .body {
+    grid-template-columns: 1fr;
+  }
+
+  .sol-panel {
+    position: static;
+  }
+}

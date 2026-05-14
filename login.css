@@ -1,0 +1,219 @@
+/* login.css  */
+
+/* HEADER DE LOGIN */
+.login-header {
+  background: var(--texto);
+  color: #fff;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.login-brand {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.login-logo {
+  font-size: 52px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -1px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.login-divider {
+  width: 2px;
+  height: 43px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.login-title {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.login-desc {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 6px;
+  max-width: 440px;
+  line-height: 1.6;
+}
+
+.login-meta {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+/* CAJA DEL FORMULARIO */
+.login-body {
+  display: flex;
+  justify-content: center;
+  padding: 48px 20px;
+}
+
+.login-box {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  padding: 36px 40px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-box-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.login-box-sub {
+  color: var(--suave);
+  font-size: 16px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+body {
+  display: block;
+  min-height: unset;
+}
+
+.form-field label {
+  font-size: 14px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.form-field input {
+  width: 100%;
+  padding: 14px 12px;
+  font-size: 16px;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.form-field input:focus {
+  border-color: #333;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.08);
+}
+
+.login-footer-info {
+  text-align: center;
+  font-size: 15px;
+  color: #777;
+  margin-top: 10px;
+}
+
+.login-credit {
+  text-align: center;
+  font-size: 13px;
+  color: #000000;
+  margin-top: 25px;
+}
+
+.login-credit {
+  opacity: 0.8;
+}
+
+.site-footer {
+  margin-top: 40px;
+  padding: 15px 10px;
+  text-align: center;
+  font-size: 15px;
+  color: #888;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.site-footer-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* RESPONSIVE - MOBILE */
+
+@media (max-width: 768px) {
+
+  /* HEADER */
+  .login-header {
+    padding: 15px 15px;
+    text-align: center;
+  }
+
+  .login-brand {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .login-logo {
+    font-size: 34px;
+  }
+
+  .login-divider {
+    display: none;
+  }
+
+  .login-title {
+    font-size: 16px;
+  }
+
+  .login-desc {
+    font-size: 14px;
+    max-width: 100%;
+  }
+
+  .login-meta {
+    font-size: 12px;
+  }
+
+  /* FORMULARIO */
+  .login-body {
+    padding: 20px 15px 5px 15px;
+  }
+
+  .login-box {
+    padding: 24px 20px;
+    border-radius: 10px;
+    margin-bottom: 0;
+  }
+
+  .login-box-title {
+    font-size: 22px;
+  }
+
+  .login-box-sub {
+    font-size: 14px;
+  }
+
+  /* INPUTS */
+  .form-field input {
+    font-size: 16px;
+    padding: 14px 10px;
+  }
+
+  /* TEXTOS FOOTER */
+  .login-footer-info {
+    font-size: 13px;
+  }
+
+  .login-credit {
+    font-size: 12px;
+  }
+
+  .site-footer {
+    font-size: 12px;
+    padding: 12px;
+    margin-top: 5px;
+  }
+}

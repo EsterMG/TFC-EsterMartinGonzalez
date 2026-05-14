@@ -1,0 +1,257 @@
+/* panel_director.css */
+/* Resumen */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.stat {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.stat-num {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--suave);
+}
+
+.stat-alerta {
+  color: var(--peligro) !important;
+}
+
+/* CABECERA PANEL */
+.turno-actual {
+  background: var(--texto);
+  color: #fff;
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+
+.turno-actual h2 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.turno-actual p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.turno-libre {
+  background: var(--borde);
+  color: var(--texto);
+}
+
+.turno-libre p {
+  color: var(--suave);
+}
+
+/* PESTAÑAS */
+.tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid var(--borde);
+  margin-bottom: 24px;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--suave);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.tab-btn:hover {
+  color: var(--texto);
+}
+
+.tab-btn.activa {
+  color: var(--texto);
+  border-bottom-color: var(--texto);
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.visible {
+  display: block;
+}
+
+/* CARDS DE SOLICITUD */
+.sol-card {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.sol-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.sol-titulo {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.sol-meta {
+  font-size: 11px;
+  color: var(--suave);
+  margin-top: 3px;
+}
+
+.prog-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: var(--fondo);
+  color: var(--suave);
+  border-radius: 4px;
+  padding: 2px 6px;
+  margin-bottom: 4px;
+}
+
+/* CARDS DE PETICIÓN */
+.pet-card {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.pet-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.pet-tipo {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.pet-desc {
+  font-size: 12px;
+  color: var(--suave);
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+.pet-meta {
+  font-size: 11px;
+  color: var(--suave);
+  margin-top: 6px;
+}
+
+.pet-respuesta {
+  margin-top: 10px;
+  padding: 10px 12px;
+  background: var(--fondo);
+  border-radius: 7px;
+  font-size: 12px;
+  color: var(--texto);
+  border-left: 3px solid var(--borde);
+}
+
+/* FORM CARD */
+.form-card {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* ESTADO VACÍO */
+.empty-state {
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--suave);
+  font-size: 13px;
+}
+
+.empty-state strong {
+  display: block;
+  font-size: 15px;
+  color: var(--texto);
+  margin-bottom: 6px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .stat {
+    padding: 12px;
+  }
+
+  .stat-num {
+    font-size: 22px;
+  }
+
+  .turno-actual {
+    padding: 16px;
+  }
+
+  .turno-actual h2 {
+    font-size: 16px;
+  }
+
+  .tabs {
+    gap: 8px;
+    padding-bottom: 4px;
+  }
+
+  .tab-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .sol-card,
+  .pet-card,
+  .form-card {
+    padding: 12px;
+  }
+
+  .sol-header,
+  .pet-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pet-respuesta {
+    font-size: 11px;
+  }
+}

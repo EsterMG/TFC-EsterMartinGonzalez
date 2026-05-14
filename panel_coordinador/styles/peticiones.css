@@ -1,0 +1,246 @@
+/* peticiones.css  */
+
+/* PESTAÑAS */
+.tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 2px solid var(--borde);
+    margin-bottom: 24px;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--suave);
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.tab-btn:hover {
+    color: var(--texto);
+}
+
+.tab-btn.activa {
+    color: var(--texto);
+    border-bottom-color: var(--texto);
+}
+
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.visible {
+    display: block;
+}
+
+/* TARJETAS ACTIVAS */
+.vac-card,
+.pet-card {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 10px;
+}
+
+.vac-card.pendiente,
+.pet-card.pendiente {
+    border-left: 3px solid var(--aviso);
+}
+
+.vac-card.en_proceso,
+.pet-card.en_proceso {
+    border-left: 3px solid #3B82F6;
+}
+
+.vac-nombre {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.vac-meta {
+    font-size: 12px;
+    color: var(--suave);
+    margin-top: 3px;
+}
+
+.vac-dias {
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+/* PANEL EXPANDIBLE */
+.respuesta-form {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--borde);
+    display: none;
+}
+
+.respuesta-form.visible {
+    display: block;
+}
+
+/* FINALIZADAS — LAYOUT DOS COLUMNAS */
+
+.fin-buscador {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+}
+
+.fin-buscador input {
+    flex: 1;
+    min-width: 160px;
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 13px;
+    color: var(--texto);
+    outline: none;
+    transition: border-color 0.15s;
+}
+
+.fin-buscador input:focus {
+    border-color: var(--texto);
+}
+
+.fin-buscador .filtros {
+    display: flex;
+    gap: 6px;
+}
+
+.fin-filtro-btn {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 7px;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--suave);
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.fin-filtro-btn:hover {
+    border-color: #aaa;
+    color: var(--texto);
+}
+
+.fin-filtro-btn.activo {
+    background: var(--texto);
+    color: #fff;
+    border-color: var(--texto);
+}
+
+.fin-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.fin-col-titulo {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--suave);
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--borde);
+}
+
+/* FILAS DE TABLA DENTRO DE CADA COLUMNA */
+.fin-row {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: border-color 0.15s;
+}
+
+.fin-row:hover {
+    border-color: #aaa;
+}
+
+.fin-row.aprobada {
+    border-left: 3px solid var(--ok);
+}
+
+.fin-row.rechazada {
+    border-left: 3px solid var(--peligro);
+}
+
+.fin-row-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.fin-row-nombre {
+    font-size: 13px;
+    font-weight: 600;
+    flex: 1;
+}
+
+.fin-row-meta {
+    font-size: 11px;
+    color: var(--suave);
+    margin-top: 3px;
+}
+
+.fin-detalle {
+    margin-top: 10px;
+    padding: 10px 12px;
+    background: var(--fondo);
+    border-radius: 6px;
+    font-size: 12px;
+    color: var(--suave);
+    line-height: 1.8;
+    display: none;
+}
+
+.fin-detalle.visible {
+    display: block;
+}
+
+.fin-vacio {
+    font-size: 13px;
+    color: var(--suave);
+    padding: 12px 0;
+    text-align: center;
+}
+
+/* BADGE TIPOS */
+.badge-tipo-vac {
+    background: rgba(29, 78, 216, 0.1);
+    color: #3B82F6;
+}
+
+.badge-tipo-pet {
+    background: rgba(107, 33, 168, 0.1);
+    color: #9333EA;
+}
+
+@media (max-width: 768px) {
+    .fin-cols {
+        grid-template-columns: 1fr;
+    }
+
+    .tabs {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}

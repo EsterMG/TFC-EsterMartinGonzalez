@@ -1,0 +1,115 @@
+/* panel_coordinador.css */
+
+:root {
+  --peligro: #B91C1C;
+}
+
+/* SOLO ajustes específicos del panel */
+.page-title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.page-subtitle {
+  font-size: 12px;
+  color: var(--suave);
+}
+
+/* GRID panel */
+.panel-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* cards accesos */
+.panel-card {
+  display: block;
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 16px 14px;
+  text-decoration: none;
+  color: var(--texto);
+  transition: border-color 0.2s;
+}
+
+.panel-card:hover {
+  border-color: #aaa;
+}
+
+.panel-name {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.panel-desc {
+  font-size: 11px;
+  color: var(--suave);
+}
+
+/* cards */
+.card {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.card-title {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* items */
+.item {
+  display: flex;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--borde);
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.item-title {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.item-meta {
+  font-size: 12px;
+  color: var(--suave);
+}
+
+/* RESPONSIVE SOLO PANEL */
+
+@media (max-width: 768px) {
+
+  .panel-grid {
+
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .card {
+    padding: 14px;
+  }
+
+  .page-title {
+    font-size: 16px;
+  }
+
+  .page-subtitle {
+    font-size: 11px;
+  }
+}

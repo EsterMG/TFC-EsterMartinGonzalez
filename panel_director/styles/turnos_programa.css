@@ -1,0 +1,601 @@
+/* turnos_programa.css — TurnosTV */
+
+/* TARJETA DEL FORMULARIO */
+.reserva-card {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.reserva-seccion {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--suave);
+    margin: 14px 0 8px;
+}
+
+.seccion-sep {
+    border: none;
+    border-top: 1px solid var(--borde);
+    margin: 18px 0;
+}
+
+.reserva-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid var(--borde);
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.dias-resumen {
+    font-size: 13px;
+    color: var(--suave);
+}
+
+/* ERROR INLINE */
+.error-inline {
+    background: #FEF2F2;
+    border: 1px solid #FECACA;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: #991B1B;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.error-inline::before {
+    content: '⚠';
+    font-size: 15px;
+    flex-shrink: 0;
+}
+
+/* CAMPOS CON ERROR */
+.campo-error select,
+.campo-error input[type="text"],
+.campo-error input[type="date"] {
+    border-color: #EF4444 !important;
+    box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.18) !important;
+}
+
+.campo-error .carr-wrap {
+    outline: 2px solid #EF4444;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+.campo-error .puestos-grid {
+    outline: 2px solid #EF4444;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+.campo-error>label {
+    color: #EF4444;
+}
+
+/* BOTÓN UTILITARIO */
+.btn-todos {
+    background: none;
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.btn-todos:hover {
+    border-color: #aaa;
+}
+
+/* SLOTS DE HORARIO */
+.celda-h {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 5px;
+    border: 1.5px solid #e0e0e0;
+    color: #999;
+    cursor: pointer;
+    transition: all 0.08s;
+    padding: 10px 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.celda-h.media-h {
+    font-size: 9px;
+    font-weight: 500;
+    color: #ccc;
+    border-color: #efefef;
+    padding: 5px 2px;
+    align-items: flex-end;
+    height: 28px;
+}
+
+.celda-h:hover {
+    border-color: #999;
+    color: #1a1a1a;
+    background: #f5f5f5;
+}
+
+.celda-h.media-h:hover {
+    border-color: #bbb;
+    color: #888;
+    background: #fafafa;
+}
+
+.celda-h.sel-h {
+    background: #1a1a1a;
+    color: #fff;
+    border-color: #1a1a1a;
+}
+
+.celda-h.media-h.sel-h {
+    background: #444;
+    color: #fff;
+    border-color: #444;
+}
+
+.hora-pill-ctrl.activo-pill {
+    background: #1a1a1a;
+    color: #fff;
+    border-color: #1a1a1a;
+}
+
+/* CARRUSEL DE DÍAS */
+.carr-wrap {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+}
+
+.carr-arrow {
+    flex-shrink: 0;
+    width: 26px;
+    height: 42px;
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+    background: var(--fondo);
+    cursor: pointer;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carr-arrow:hover:not(:disabled) {
+    border-color: #aaa;
+}
+
+.carr-arrow:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.carr-dias {
+    display: flex;
+    gap: 3px;
+    flex: 1;
+    min-width: 0;
+}
+
+.dia-btn {
+    flex: 1;
+    min-width: 0;
+    height: 42px;
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+    background: var(--blanco);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: all 0.12s;
+    user-select: none;
+    padding: 0;
+}
+
+.dia-btn:hover {
+    border-color: #aaa;
+    background: #f5f5f5;
+}
+
+.dia-btn.seleccionado {
+    background: var(--texto) !important;
+    color: #fff !important;
+    border-color: var(--texto) !important;
+}
+
+.dia-btn.finde {
+    background: #faf8f4;
+    border-color: #e8e0d0;
+}
+
+.dia-btn .dia-nom {
+    font-size: 8px;
+    font-weight: 500;
+    opacity: 0.6;
+    line-height: 1.3;
+}
+
+.dia-btn .dia-num {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.dia-btn .dia-mes {
+    font-size: 7px;
+    opacity: 0.45;
+    line-height: 1.2;
+}
+
+/* GRID DE PUESTOS */
+.puestos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+}
+
+.puesto-item {
+    display: flex;
+    align-items: center;
+    padding: 7px 10px;
+    border: 1px solid var(--borde);
+    border-radius: 7px;
+    background: var(--fondo);
+    cursor: pointer;
+    transition: all 0.12s;
+    width: 100%;
+}
+
+.puesto-item:hover {
+    border-color: #aaa;
+    background: #fff;
+}
+
+.puesto-item.activo {
+    background: var(--texto) !important;
+    border-color: var(--texto) !important;
+}
+
+.puesto-item.activo .puesto-nombre {
+    color: #fff !important;
+}
+
+.puesto-nombre {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* CALENDARIO MENSUAL */
+.cal-card {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.cal-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--borde);
+}
+
+.cal-nav a {
+    text-decoration: none;
+    color: var(--suave);
+    font-size: 18px;
+    padding: 4px 10px;
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+}
+
+.cal-nav a:hover {
+    border-color: #aaa;
+    color: var(--texto);
+}
+
+.cal-mes {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.cal-dia-nombre {
+    text-align: center;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--suave);
+    padding: 8px 0;
+    border-bottom: 1px solid var(--borde);
+}
+
+.cal-dia {
+    border-right: 1px solid var(--borde);
+    border-bottom: 1px solid var(--borde);
+    padding: 6px;
+    min-height: 80px;
+    cursor: pointer;
+    transition: background 0.1s;
+    overflow: hidden;
+}
+
+.cal-dia:nth-child(7n) {
+    border-right: none;
+}
+
+.cal-dia:hover {
+    background: #fafaf8;
+}
+
+.cal-dia.hoy {
+    background: #f0f7ff;
+}
+
+.cal-dia.vacio,
+.cal-dia.sin-datos {
+    background: var(--fondo);
+    cursor: default;
+}
+
+.cal-dia.sin-datos:hover {
+    background: var(--fondo);
+}
+
+.cal-num {
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.cal-dia.vacio .cal-num {
+    color: var(--borde);
+}
+
+.cal-tags {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.cal-tag {
+    font-size: 9px;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+
+.cal-tag.pendiente {
+    background: #FEF3C7;
+    color: #92400e;
+}
+
+.cal-tag.en_proceso {
+    background: #DBEAFE;
+    color: #1e40af;
+}
+
+.cal-tag.aprobada {
+    background: #DCFCE7;
+    color: #166534;
+}
+
+.cal-tag.rechazada {
+    background: #FEE2E2;
+    color: #991b1b;
+}
+
+.cal-tag.cubierto {
+    background: #DCFCE7;
+    color: #166534;
+}
+
+/* DETALLE DÍA EXPANDIDO */
+.detalle-sol {
+    display: none;
+    grid-column: 1 / -1;
+    background: #f8f8f6;
+    border-bottom: 1px solid var(--borde);
+    padding: 16px;
+}
+
+.detalle-sol.visible {
+    display: block;
+}
+
+.detalle-seccion-titulo {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--suave);
+    margin: 14px 0 8px;
+    padding-top: 14px;
+    border-top: 1px solid var(--borde);
+}
+
+/* EQUIPO CONFIRMADO */
+.equipo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.emp-card {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    padding: 10px 12px;
+}
+
+.emp-nombre {
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.emp-puesto {
+    font-size: 10px;
+    color: var(--suave);
+}
+
+.emp-horario {
+    font-size: 10px;
+    color: #1e40af;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+
+    /* CARD PRINCIPAL */
+    .reserva-card {
+        padding: 14px;
+    }
+
+    /* SECCIONES */
+    .reserva-seccion {
+        font-size: 9px;
+    }
+
+    /* FOOTER FLEX */
+    .reserva-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* ERROR */
+    .error-inline {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+
+    /* HORARIOS */
+    .celda-h {
+        font-size: 10px;
+        padding: 8px 2px;
+    }
+
+    .celda-h.media-h {
+        font-size: 8px;
+    }
+
+    /* CARRUSEL DÍAS */
+    .carr-dias {
+        gap: 2px;
+    }
+
+    .dia-btn {
+        height: 38px;
+    }
+
+    .dia-btn .dia-nom {
+        font-size: 7px;
+    }
+
+    .dia-btn .dia-num {
+        font-size: 11px;
+    }
+
+    /* PUESTOS GRID */
+    .puestos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+    }
+
+    .puesto-nombre {
+        font-size: 11px;
+    }
+
+    /* CALENDARIO */
+    .cal-dia {
+        min-height: 60px;
+        padding: 4px;
+    }
+
+    .cal-num {
+        font-size: 11px;
+    }
+
+    .cal-tag {
+        font-size: 8px;
+    }
+
+    /* HEADER CALENDARIO */
+    .cal-nav {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .cal-mes {
+        font-size: 14px;
+    }
+
+    /* EQUIPO */
+    .equipo-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .emp-card {
+        padding: 8px;
+    }
+
+    .emp-nombre {
+        font-size: 11px;
+    }
+
+    .emp-puesto,
+    .emp-horario {
+        font-size: 9px;
+    }
+
+    /* HORAS */
+    .celda-h,
+    .celda-h.media-h {
+        display: none !important;
+    }
+
+    .horas-grid,
+    .grid-horas,
+    .turnos-grid {
+        display: none !important;
+    }
+
+    .horas-select-mobile {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border: 1px solid var(--borde);
+        border-radius: 8px;
+        font-size: 14px;
+        background: var(--blanco);
+    }
+}
