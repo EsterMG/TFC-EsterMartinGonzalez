@@ -329,7 +329,7 @@ $reabrir_form = !empty($mensaje_error) && !empty($form_data);
                 </div>
                 <div id="dur-ctrl" style="font-size:12px;color:var(--suave);margin-bottom:6px;min-height:16px"></div>
                 <div style="display:flex;gap:6px;flex-wrap:wrap">
-                  <?php foreach ([['05:30', '13:30'],['08:00', '14:00'], ['14:00', '22:00'], ['22:00', '24:00']] as $fp): ?>
+                  <?php foreach ([['05:30', '13:30'], ['08:00', '14:00'], ['14:00', '22:00'], ['22:00', '24:00']] as $fp): ?>
                     <button type="button" class="btn-todos hora-pill-ctrl" data-ini="<?= $fp[0] ?>"
                       data-fin="<?= $fp[1] ?>" style="font-size:11px;padding:4px 8px" onclick="aplicarPillCtrl(this)">
                       <?= $fp[0] ?>–<?= $fp[1] ?>
