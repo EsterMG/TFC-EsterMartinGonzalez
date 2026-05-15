@@ -8,7 +8,7 @@
   align-items: start;
 }
 
-@media(max-width:860px) {
+@media (max-width: 860px) {
   .hor-layout {
     grid-template-columns: 1fr;
   }
@@ -124,17 +124,17 @@
 }
 
 .cal-mini.ok {
-  background: #DCFCE7;
+  background: #dcfce7;
   color: #166534;
 }
 
 .cal-mini.pend {
-  background: #FEF3C7;
+  background: #fef3c7;
   color: #92400e;
 }
 
 .cal-mini.vacio-t {
-  background: #EEF3FB;
+  background: #eef3fb;
   color: #1a5fa8;
 }
 
@@ -276,7 +276,7 @@
 .g-fila-ctrl {
   display: flex;
   border-bottom: 2px solid #b8cce8;
-  background: #EEF3FB;
+  background: #eef3fb;
 }
 
 .g-fila-ctrl .glbl {
@@ -383,93 +383,93 @@
 
 /* Colores por puesto (índice 0-11) */
 .b-cub[data-puesto-idx="0"] {
-  background: #DBEAFE;
+  background: #dbeafe;
   color: #1e40af;
-  border: 1px solid #93C5FD;
+  border: 1px solid #93c5fd;
 }
 
 /* JEFE */
 .b-cub[data-puesto-idx="1"] {
-  background: #D1FAE5;
-  color: #065F46;
-  border: 1px solid #6EE7B7;
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #6ee7b7;
 }
 
 /* MEZCLA */
 .b-cub[data-puesto-idx="2"] {
-  background: #FEF3C7;
-  color: #78350F;
-  border: 1px solid #FCD34D;
+  background: #fef3c7;
+  color: #78350f;
+  border: 1px solid #fcd34d;
 }
 
 /* SONIDO */
 .b-cub[data-puesto-idx="3"] {
-  background: #FCE7F3;
+  background: #fce7f3;
   color: #831843;
-  border: 1px solid #F9A8D4;
+  border: 1px solid #f9a8d4;
 }
 
 /* CCU */
 .b-cub[data-puesto-idx="4"] {
-  background: #EDE9FE;
-  color: #4C1D95;
-  border: 1px solid #C4B5FD;
+  background: #ede9fe;
+  color: #4c1d95;
+  border: 1px solid #c4b5fd;
 }
 
 /* ILUMINA */
 .b-cub[data-puesto-idx="5"] {
-  background: #DCFCE7;
-  color: #14532D;
-  border: 1px solid #86EFAC;
+  background: #dcfce7;
+  color: #14532d;
+  border: 1px solid #86efac;
 }
 
 /* EVS */
 .b-cub[data-puesto-idx="6"] {
-  background: #FFF7ED;
-  color: #9A3412;
-  border: 1px solid #FDBA74;
+  background: #fff7ed;
+  color: #9a3412;
+  border: 1px solid #fdba74;
 }
 
 /* MULTIPLAY */
 .b-cub[data-puesto-idx="7"] {
-  background: #F0F9FF;
-  color: #0C4A6E;
-  border: 1px solid #7DD3FC;
+  background: #f0f9ff;
+  color: #0c4a6e;
+  border: 1px solid #7dd3fc;
 }
 
 /* ROTULO */
 .b-cub[data-puesto-idx="8"] {
-  background: #F0FDF4;
+  background: #f0fdf4;
   color: #166534;
-  border: 1px solid #4ADE80;
+  border: 1px solid #4ade80;
 }
 
 /* PROMPT */
 .b-cub[data-puesto-idx="9"] {
-  background: #FFF1F2;
-  color: #9F1239;
-  border: 1px solid #FDA4AF;
+  background: #fff1f2;
+  color: #9f1239;
+  border: 1px solid #fda4af;
 }
 
 /* PRIMERA */
 .b-cub[data-puesto-idx="10"] {
-  background: #ECFEFF;
-  color: #164E63;
-  border: 1px solid #67E8F9;
+  background: #ecfeff;
+  color: #164e63;
+  border: 1px solid #67e8f9;
 }
 
 /* CAMARA */
 .b-cub[data-puesto-idx="11"] {
-  background: #F5F3FF;
-  color: #3730A3;
-  border: 1px solid #A5B4FC;
+  background: #f5f3ff;
+  color: #3730a3;
+  border: 1px solid #a5b4fc;
 }
 
 /* AUXILIAR */
 .b-cub {
-  background: #DBEAFE;
+  background: #dbeafe;
   color: #1e40af;
-  border: 1px solid #93C5FD;
+  border: 1px solid #93c5fd;
 }
 
 /* fallback */
@@ -512,7 +512,7 @@
   max-width: 400px;
   margin: 16px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
-  animation: popIn .13s ease both;
+  animation: popIn 0.13s ease both;
   max-height: 92vh;
   overflow-y: auto;
 }
@@ -520,7 +520,7 @@
 @keyframes popIn {
   from {
     opacity: 0;
-    transform: scale(.96) translateY(4px);
+    transform: scale(0.96) translateY(4px);
   }
 
   to {
@@ -550,13 +550,13 @@
   font-size: 9px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: .8px;
+  letter-spacing: 0.8px;
   color: #666;
   margin-bottom: 3px;
 }
 
 .pop-f select,
-.pop-f input[type=time] {
+.pop-f input[type="time"] {
   width: 100%;
   background: var(--fondo);
   border: 1.5px solid var(--borde);
@@ -617,9 +617,9 @@
 
 .pop-del {
   padding: 9px 12px;
-  background: #FEF2F2;
-  color: #DC2626;
-  border: 1.5px solid #FECACA;
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1.5px solid #fecaca;
   border-radius: 8px;
   font-size: 12px;
   font-weight: 500;
@@ -627,7 +627,7 @@
 }
 
 .pop-del:hover {
-  background: #FEE2E2;
+  background: #fee2e2;
 }
 
 /* Lista trabajadores */
@@ -644,10 +644,10 @@
   font-size: 9px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: .7px;
+  letter-spacing: 0.7px;
   color: var(--suave);
   padding: 5px 8px 1px;
-  opacity: .7;
+  opacity: 0.7;
 }
 
 .wk-opt {
@@ -660,7 +660,9 @@
   font-size: 11px;
   font-weight: 500;
   gap: 6px;
-  transition: border-color .12s, background .12s;
+  transition:
+    border-color 0.12s,
+    background 0.12s;
 }
 
 .wk-opt:hover {
@@ -677,7 +679,7 @@
 
 .wk-opt.wk-busy {
   color: var(--suave);
-  opacity: .6;
+  opacity: 0.6;
 }
 
 .wk-dot {
@@ -689,7 +691,7 @@
 }
 
 .wk-dot.libre {
-  background: #16A34A;
+  background: #16a34a;
 }
 
 .wk-badge {
@@ -800,7 +802,7 @@
   text-decoration: none;
   color: var(--suave);
   font-size: 16px;
-  transition: border-color .15s;
+  transition: border-color 0.15s;
 }
 
 .nav-arrow:hover {
@@ -818,7 +820,7 @@
   border-radius: 6px;
   text-decoration: none;
   color: var(--suave);
-  transition: border-color .15s;
+  transition: border-color 0.15s;
 }
 
 .nav-hoy:hover {
@@ -867,7 +869,7 @@
   margin-left: 10px;
   margin-right: 16px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
-  animation: popIn .13s ease both;
+  animation: popIn 0.13s ease both;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -957,7 +959,7 @@
   cursor: ew-resize;
   z-index: 10;
   opacity: 0;
-  transition: opacity .15s;
+  transition: opacity 0.15s;
 }
 
 .barra:hover .barra-handle {
@@ -989,7 +991,7 @@
   font-weight: 600;
   cursor: pointer;
   color: var(--texto);
-  transition: border-color .15s;
+  transition: border-color 0.15s;
 }
 
 .cal-btn:hover {
@@ -1056,7 +1058,6 @@
 }
 
 @media (max-width: 768px) {
-
   .hor-layout {
     grid-template-columns: 1fr;
   }
@@ -1095,7 +1096,6 @@
   .leyenda {
     display: none;
   }
-
 }
 
 /* Layout con panel lateral cuando hay solicitud activa */
@@ -1118,14 +1118,14 @@
   position: sticky;
   top: 80px;
   background: var(--blanco);
-  border: 2px solid #3B82F6;
+  border: 2px solid #3b82f6;
   border-radius: 10px;
   overflow: hidden;
 }
 
 .sol-panel-head {
-  background: #EFF6FF;
-  border-bottom: 1px solid #BFDBFE;
+  background: #eff6ff;
+  border-bottom: 1px solid #bfdbfe;
   padding: 12px 14px;
 }
 
@@ -1138,7 +1138,7 @@
 
 .sol-panel-head p {
   font-size: 11px;
-  color: #3B82F6;
+  color: #3b82f6;
 }
 
 .sol-panel-body {
@@ -1188,7 +1188,7 @@
 }
 
 .sol-fecha-btn:hover {
-  border-color: #3B82F6;
+  border-color: #3b82f6;
   color: #1e40af;
 }
 

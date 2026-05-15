@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-05-2026 a las 22:35:21
+-- Tiempo de generación: 15-05-2026 a las 20:09:51
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -102,8 +102,20 @@ INSERT INTO `dias_extra` (`id`, `empleado_id`, `fecha`, `tipo`, `horas`, `dias`,
 (48, 47, '2026-05-14', 'dia_extra', 0.00, 0.00, '', NULL, 'manual', '2026-05-14 15:35:25', NULL),
 (49, 48, '2026-05-14', 'dia_extra', 0.00, 0.00, '', NULL, 'manual', '2026-05-14 15:36:12', NULL),
 (50, 48, '2026-05-14', 'festivo', 0.00, 1.00, 'festivo porque sí', NULL, 'manual', '2026-05-14 15:36:35', NULL),
-(57, 51, '2026-05-15', 'festivo', 0.00, 1.00, 'Festivo 2026-05-15', NULL, 'automatico', '2026-05-14 15:47:25', '2026-05-15'),
-(58, 51, '2026-05-05', 'dia_extra', 3.00, 0.00, '', NULL, 'manual', '2026-05-14 15:47:48', NULL);
+(58, 51, '2026-05-05', 'dia_extra', 3.00, 0.00, '', NULL, 'manual', '2026-05-14 15:47:48', NULL),
+(63, 1, '2026-05-15', 'festivo', 0.00, 1.00, 'Festivo 2026-05-15', NULL, 'automatico', '2026-05-14 20:43:38', '2026-05-15'),
+(64, 3, '2026-05-15', 'festivo', 0.00, 1.00, 'Festivo 2026-05-15', NULL, 'automatico', '2026-05-14 20:43:38', '2026-05-15'),
+(65, 6, '2026-05-15', 'festivo', 0.00, 1.00, 'Festivo 2026-05-15', NULL, 'automatico', '2026-05-14 20:43:38', '2026-05-15'),
+(66, 11, '2026-05-15', 'festivo', 0.00, 1.00, 'Festivo 2026-05-15', NULL, 'automatico', '2026-05-14 20:43:38', '2026-05-15'),
+(67, 13, '2026-05-15', 'festivo', 0.00, 1.00, 'Festivo 2026-05-15', NULL, 'automatico', '2026-05-14 20:43:38', '2026-05-15'),
+(70, 51, '2026-05-02', 'dia_extra', 0.00, 1.00, '', NULL, 'manual', '2026-05-14 20:44:06', NULL),
+(71, 4, '2026-05-15', 'festivo', 0.00, 1.00, 'Festivo 2026-05-15', NULL, 'automatico', '2026-05-15 16:30:38', '2026-05-15'),
+(72, 5, '2026-05-15', 'festivo', 0.00, 1.00, 'Festivo 2026-05-15', NULL, 'automatico', '2026-05-15 16:31:10', '2026-05-15'),
+(74, 9, '2026-05-15', 'festivo', 0.00, 1.00, 'Festivo 2026-05-15', NULL, 'automatico', '2026-05-15 16:57:51', '2026-05-15'),
+(75, 14, '2026-05-15', 'festivo', 0.00, 1.00, 'Festivo 2026-05-15', NULL, 'automatico', '2026-05-15 16:58:50', '2026-05-15'),
+(77, 8, '2026-05-15', 'festivo', 0.00, 1.00, 'Festivo 2026-05-15', NULL, 'automatico', '2026-05-15 16:58:58', '2026-05-15'),
+(78, 17, '2026-05-15', 'festivo', 0.00, 1.00, 'Festivo 2026-05-15', NULL, 'automatico', '2026-05-15 16:59:11', '2026-05-15'),
+(79, 51, '2026-05-15', 'festivo', 0.00, 1.00, 'Festivo 2026-05-15', NULL, 'automatico', '2026-05-15 16:59:28', '2026-05-15');
 
 -- --------------------------------------------------------
 
@@ -145,7 +157,7 @@ CREATE TABLE `empleados` (
 --
 
 INSERT INTO `empleados` (`id`, `usuario_id`, `num_empleado`, `puesto`, `vacaciones_total`, `vacaciones_gastadas`) VALUES
-(1, 6, 'EMP-001', 'JEFE', 22, 5),
+(1, 6, 'EMP-001', 'JEFE', 22, 11),
 (3, 7, 'EMP-007', 'JEFE', 22, 0),
 (4, 8, 'EMP-008', 'JEFE', 22, 0),
 (5, 9, 'EMP-009', 'JEFE', 22, 0),
@@ -226,7 +238,7 @@ INSERT INTO `festivos` (`id`, `fecha`, `descripcion`, `created_at`, `tipo`) VALU
 (13, '2026-05-01', '', '2026-05-08 07:45:43', 'festivo'),
 (14, '2026-05-02', '', '2026-05-11 14:49:51', 'fin_de_semana'),
 (15, '2026-05-03', '', '2026-05-11 14:49:51', 'fin_de_semana'),
-(20, '2026-05-15', '', '2026-05-14 15:47:25', 'festivo');
+(21, '2026-05-15', '', '2026-05-14 20:43:38', 'festivo');
 
 -- --------------------------------------------------------
 
@@ -253,7 +265,8 @@ CREATE TABLE `peticiones` (
 INSERT INTO `peticiones` (`id`, `director_id`, `programa_id`, `tipo`, `descripcion`, `fecha_pedida`, `estado`, `respuesta`, `fecha_peticion`) VALUES
 (1, 1, NULL, 'Ampliar horario', 'afr adf sdf sdf sf', '2026-05-27', 'pendiente', NULL, '2026-05-14 18:50:20'),
 (2, 1, NULL, 'Refuerzo fin semana', 'ft hydghfgh fh f', '2026-05-31', 'pendiente', NULL, '2026-05-14 18:59:47'),
-(3, 1, NULL, 'Ampliar horario', 'sdfg s gd gs g sfsds', '2026-06-01', 'pendiente', NULL, '2026-05-14 19:24:28');
+(3, 1, NULL, 'Ampliar horario', 'sdfg s gd gs g sfsds', '2026-06-01', 'pendiente', NULL, '2026-05-14 19:24:28'),
+(4, 1, NULL, 'Refuerzo fin semana', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.', '2026-05-21', 'pendiente', NULL, '2026-05-15 09:47:34');
 
 -- --------------------------------------------------------
 
@@ -328,9 +341,10 @@ CREATE TABLE `solicitudes` (
 --
 
 INSERT INTO `solicitudes` (`id`, `programa_id`, `director_id`, `control_nombre`, `plato`, `hora_inicio`, `hora_fin`, `estado`, `notas`, `fecha_peticion`, `coordinador_id`, `fecha_respuesta`, `respuesta`) VALUES
-(1, 1, 1, 'Control 3', 'Plato 3', '05:00:00', '11:00:00', 'en_proceso', 'turnos para el matinal', '2026-05-14 10:44:34', NULL, NULL, NULL),
+(1, 1, 1, 'Control 3', 'Plato 3', '05:00:00', '11:00:00', 'rechazada', '', '2026-05-14 10:44:34', NULL, NULL, NULL),
 (2, 8, 1, 'Control 3', 'Plato 3', '17:00:00', '22:00:00', 'aprobada', '', '2026-05-14 10:45:18', NULL, NULL, NULL),
-(3, 13, 1, 'Control 3', 'Plato 3', '14:00:00', '22:00:00', 'pendiente', 'f dffffffffffffffffffffffffff daaaaaaaaaaaaaa', '2026-05-14 19:25:01', NULL, NULL, NULL);
+(3, 13, 1, 'Control 3', 'Plato 3', '14:00:00', '22:00:00', 'aprobada', 'f dffffffffffffffffffffffffff daaaaaaaaaaaaaa', '2026-05-14 19:25:01', 2, '2026-05-14 22:41:30', NULL),
+(4, 1, 1, 'Control 3', 'Plato 3', '05:00:00', '13:30:00', 'pendiente', '', '2026-05-15 09:49:09', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -359,7 +373,14 @@ INSERT INTO `solicitud_fechas` (`id`, `solicitud_id`, `fecha`) VALUES
 (9, 2, '2026-05-20'),
 (10, 2, '2026-05-21'),
 (7, 2, '2026-05-22'),
-(11, 3, '2026-05-27');
+(11, 3, '2026-05-27'),
+(12, 4, '2026-05-18'),
+(13, 4, '2026-05-19'),
+(14, 4, '2026-05-20'),
+(15, 4, '2026-05-21'),
+(16, 4, '2026-05-22'),
+(17, 4, '2026-05-26'),
+(18, 4, '2026-05-27');
 
 -- --------------------------------------------------------
 
@@ -382,14 +403,14 @@ CREATE TABLE `solicitud_puestos` (
 --
 
 INSERT INTO `solicitud_puestos` (`id`, `solicitud_id`, `puesto_solicitado`, `hora_inicio`, `hora_fin`, `empleado_id`, `estado`) VALUES
-(1, 1, 'JEFE', '05:00:00', '11:00:00', NULL, 'pendiente'),
+(1, 1, 'JEFE', '05:00:00', '11:00:00', 3, 'cubierto'),
 (2, 1, 'MEZCLA', '05:00:00', '11:00:00', NULL, 'pendiente'),
 (3, 1, 'SONIDO', '05:00:00', '11:00:00', NULL, 'pendiente'),
-(4, 1, 'CCU', '05:00:00', '11:00:00', NULL, 'pendiente'),
+(4, 1, 'CCU', '05:00:00', '11:00:00', 17, 'cubierto'),
 (5, 1, 'ILUMINA', '05:00:00', '11:00:00', NULL, 'pendiente'),
-(6, 1, 'EVS', '05:00:00', '11:00:00', NULL, 'pendiente'),
+(6, 1, 'EVS', '05:00:00', '11:00:00', 24, 'cubierto'),
 (7, 1, 'MULTIPLAY', '05:00:00', '11:00:00', NULL, 'pendiente'),
-(8, 1, 'ROTULO', '05:00:00', '11:00:00', NULL, 'pendiente'),
+(8, 1, 'ROTULO', '05:00:00', '11:00:00', 33, 'cubierto'),
 (9, 1, 'PROMPT', '05:00:00', '11:00:00', NULL, 'pendiente'),
 (10, 1, 'PRIMERA', '05:00:00', '11:00:00', NULL, 'pendiente'),
 (11, 1, 'CAMARA', '05:00:00', '11:00:00', NULL, 'pendiente'),
@@ -397,8 +418,20 @@ INSERT INTO `solicitud_puestos` (`id`, `solicitud_id`, `puesto_solicitado`, `hor
 (13, 2, 'CCU', '17:00:00', '22:00:00', 15, 'cubierto'),
 (14, 2, 'ILUMINA', '17:00:00', '22:00:00', 19, 'cubierto'),
 (15, 2, 'EVS', '17:00:00', '22:00:00', 23, 'cubierto'),
-(16, 3, 'MEZCLA', '14:00:00', '22:00:00', NULL, 'pendiente'),
-(17, 3, 'ILUMINA', '14:00:00', '22:00:00', NULL, 'pendiente');
+(16, 3, 'MEZCLA', '14:00:00', '22:00:00', 7, 'cubierto'),
+(17, 3, 'ILUMINA', '14:00:00', '22:00:00', 20, 'cubierto'),
+(18, 4, 'JEFE', '05:00:00', '13:30:00', NULL, 'pendiente'),
+(19, 4, 'MEZCLA', '05:00:00', '13:30:00', NULL, 'pendiente'),
+(20, 4, 'SONIDO', '05:00:00', '13:30:00', NULL, 'pendiente'),
+(21, 4, 'CCU', '05:00:00', '13:30:00', NULL, 'pendiente'),
+(22, 4, 'ILUMINA', '05:00:00', '13:30:00', NULL, 'pendiente'),
+(23, 4, 'EVS', '05:00:00', '13:30:00', NULL, 'pendiente'),
+(24, 4, 'MULTIPLAY', '05:00:00', '13:30:00', NULL, 'pendiente'),
+(25, 4, 'ROTULO', '05:00:00', '13:30:00', NULL, 'pendiente'),
+(26, 4, 'PROMPT', '05:00:00', '13:30:00', NULL, 'pendiente'),
+(27, 4, 'PRIMERA', '05:00:00', '13:30:00', NULL, 'pendiente'),
+(28, 4, 'CAMARA', '05:00:00', '13:30:00', NULL, 'pendiente'),
+(29, 4, 'AUXILIAR', '05:00:00', '13:30:00', NULL, 'pendiente');
 
 -- --------------------------------------------------------
 
@@ -442,11 +475,11 @@ INSERT INTO `turnos` (`id`, `empleado_id`, `programa_id`, `coordinador_id`, `pue
 (14, 19, 8, 2, 'ILUMINA', '2026-05-22', '17:00:00', '22:00:00', 'cubierto', 'Control 3', 'Plato 3', 5),
 (15, 23, 8, 2, 'EVS', '2026-05-22', '17:00:00', '22:00:00', 'cubierto', 'Control 3', 'Plato 3', 5),
 (16, 3, 12, 2, 'JEFE', '2026-05-16', '09:00:00', '22:00:00', 'cubierto', 'Control 2', 'Plato 2', 6),
-(17, 7, 12, 2, 'MEZCLA', '2026-05-16', '09:00:00', '22:00:00', 'cubierto', 'Control 2', 'Plato 2', 6),
+(17, 7, 12, 2, 'MEZCLA', '2026-05-16', '09:00:00', '16:30:00', 'cubierto', 'Control 2', 'Plato 2', 6),
 (18, 11, 12, 2, 'SONIDO', '2026-05-16', '09:00:00', '22:00:00', 'cubierto', 'Control 2', 'Plato 2', 6),
 (19, 15, 12, 2, 'CCU', '2026-05-16', '09:00:00', '22:00:00', 'cubierto', 'Control 2', 'Plato 2', 6),
 (20, 19, 12, 2, 'ILUMINA', '2026-05-16', '09:00:00', '22:00:00', 'cubierto', 'Control 2', 'Plato 2', 6),
-(21, 23, 12, 2, 'EVS', '2026-05-16', '09:00:00', '22:00:00', 'cubierto', 'Control 2', 'Plato 2', 6),
+(21, 23, 12, 2, 'EVS', '2026-05-16', '13:45:00', '22:00:00', 'cubierto', 'Control 2', 'Plato 2', 6),
 (22, 27, 12, 2, 'MULTIPLAY', '2026-05-16', '09:00:00', '22:00:00', 'cubierto', 'Control 2', 'Plato 2', 6),
 (23, 31, 12, 2, 'ROTULO', '2026-05-16', '09:00:00', '22:00:00', 'cubierto', 'Control 2', 'Plato 2', 6),
 (24, 35, 12, 2, 'PROMPT', '2026-05-16', '09:00:00', '22:00:00', 'cubierto', 'Control 2', 'Plato 2', 6),
@@ -456,28 +489,16 @@ INSERT INTO `turnos` (`id`, `empleado_id`, `programa_id`, `coordinador_id`, `pue
 (28, 3, 12, 2, 'JEFE', '2026-05-17', '09:00:00', '22:00:00', 'cubierto', 'Control 2', 'Plato 2', 7),
 (29, 7, 12, 2, 'MEZCLA', '2026-05-17', '09:00:00', '22:00:00', 'cubierto', 'Control 2', 'Plato 2', 7),
 (30, 11, 12, 2, 'SONIDO', '2026-05-17', '09:00:00', '22:00:00', 'cubierto', 'Control 2', 'Plato 2', 7),
-(31, 15, 12, 2, 'CCU', '2026-05-17', '09:00:00', '22:00:00', 'cubierto', 'Control 2', 'Plato 2', 7),
-(32, 19, 12, 2, 'ILUMINA', '2026-05-17', '09:00:00', '22:00:00', 'cubierto', 'Control 2', 'Plato 2', 7),
-(33, 23, 12, 2, 'EVS', '2026-05-17', '09:00:00', '22:00:00', 'cubierto', 'Control 2', 'Plato 2', 7),
-(34, 27, 12, 2, 'MULTIPLAY', '2026-05-17', '09:00:00', '22:00:00', 'cubierto', 'Control 2', 'Plato 2', 7),
+(31, 15, 12, 2, 'CCU', '2026-05-17', '09:00:00', '15:30:00', 'cubierto', 'Control 2', 'Plato 2', 7),
+(32, 19, 12, 2, 'ILUMINA', '2026-05-17', '09:00:00', '17:15:00', 'cubierto', 'Control 2', 'Plato 2', 7),
+(33, 23, 12, 2, 'EVS', '2026-05-17', '09:00:00', '13:45:00', 'cubierto', 'Control 2', 'Plato 2', 7),
+(34, 27, 12, 2, 'MULTIPLAY', '2026-05-17', '06:00:00', '13:30:00', 'cubierto', 'Control 2', 'Plato 2', 7),
 (35, 31, 12, 2, 'ROTULO', '2026-05-17', '09:00:00', '22:00:00', 'cubierto', 'Control 2', 'Plato 2', 7),
 (36, 35, 12, 2, 'PROMPT', '2026-05-17', '09:00:00', '22:00:00', 'cubierto', 'Control 2', 'Plato 2', 7),
 (37, 39, 12, 2, 'PRIMERA', '2026-05-17', '09:00:00', '22:00:00', 'cubierto', 'Control 2', 'Plato 2', 7),
 (38, 43, 12, 2, 'CAMARA', '2026-05-17', '09:00:00', '22:00:00', 'cubierto', 'Control 2', 'Plato 2', 7),
 (39, 47, 12, 2, 'AUXILIAR', '2026-05-17', '09:00:00', '22:00:00', 'cubierto', 'Control 2', 'Plato 2', 7),
 (40, 8, 12, 2, 'MEZCLA', '2026-05-17', '07:30:00', '12:00:00', 'cubierto', 'Control 2', 'Plato 2', 7),
-(53, NULL, 14, 2, 'JEFE', '2026-05-15', '13:15:00', '18:30:00', 'sin_cubrir', 'Control 5', 'Plato 5', 9),
-(55, NULL, 14, 2, 'SONIDO', '2026-05-15', '13:15:00', '18:30:00', 'sin_cubrir', 'Control 5', 'Plato 5', 9),
-(56, NULL, 14, 2, 'CCU', '2026-05-15', '13:15:00', '18:30:00', 'sin_cubrir', 'Control 5', 'Plato 5', 9),
-(57, NULL, 14, 2, 'ILUMINA', '2026-05-15', '13:15:00', '18:30:00', 'sin_cubrir', 'Control 5', 'Plato 5', 9),
-(58, NULL, 14, 2, 'EVS', '2026-05-15', '13:15:00', '18:30:00', 'sin_cubrir', 'Control 5', 'Plato 5', 9),
-(59, NULL, 14, 2, 'MULTIPLAY', '2026-05-15', '13:15:00', '18:30:00', 'sin_cubrir', 'Control 5', 'Plato 5', 9),
-(60, NULL, 14, 2, 'ROTULO', '2026-05-15', '13:15:00', '18:30:00', 'sin_cubrir', 'Control 5', 'Plato 5', 9),
-(61, NULL, 14, 2, 'PROMPT', '2026-05-15', '13:15:00', '18:30:00', 'sin_cubrir', 'Control 5', 'Plato 5', 9),
-(62, NULL, 14, 2, 'PRIMERA', '2026-05-15', '13:15:00', '18:30:00', 'sin_cubrir', 'Control 5', 'Plato 5', 9),
-(63, NULL, 14, 2, 'CAMARA', '2026-05-15', '13:15:00', '18:30:00', 'sin_cubrir', 'Control 5', 'Plato 5', 9),
-(64, NULL, 14, 2, 'AUXILIAR', '2026-05-15', '13:15:00', '18:30:00', 'sin_cubrir', 'Control 5', 'Plato 5', 9),
-(66, 51, 14, 2, 'MEZCLA', '2026-05-15', '13:30:00', '17:30:00', 'cubierto', 'Control 5', 'Plato 5', 9),
 (163, NULL, 7, 2, 'JEFE', '2026-05-11', '14:00:00', '22:00:00', 'sin_cubrir', 'Control 7', 'Plato 7', 18),
 (164, NULL, 7, 2, 'MEZCLA', '2026-05-11', '14:00:00', '22:00:00', 'sin_cubrir', 'Control 7', 'Plato 7', 18),
 (165, NULL, 7, 2, 'SONIDO', '2026-05-11', '14:00:00', '22:00:00', 'sin_cubrir', 'Control 7', 'Plato 7', 18),
@@ -526,18 +547,18 @@ INSERT INTO `turnos` (`id`, `empleado_id`, `programa_id`, `coordinador_id`, `pue
 (208, NULL, 7, 2, 'PRIMERA', '2026-05-14', '14:00:00', '22:00:00', 'sin_cubrir', 'Control 7', 'Plato 7', 21),
 (209, NULL, 7, 2, 'CAMARA', '2026-05-14', '14:00:00', '22:00:00', 'sin_cubrir', 'Control 7', 'Plato 7', 21),
 (210, NULL, 7, 2, 'AUXILIAR', '2026-05-14', '14:00:00', '22:00:00', 'sin_cubrir', 'Control 7', 'Plato 7', 21),
-(211, NULL, 7, 2, 'JEFE', '2026-05-15', '14:00:00', '22:00:00', 'sin_cubrir', 'Control 7', 'Plato 7', 22),
-(212, NULL, 7, 2, 'MEZCLA', '2026-05-15', '14:00:00', '22:00:00', 'sin_cubrir', 'Control 7', 'Plato 7', 22),
-(213, NULL, 7, 2, 'SONIDO', '2026-05-15', '14:00:00', '22:00:00', 'sin_cubrir', 'Control 7', 'Plato 7', 22),
-(214, NULL, 7, 2, 'CCU', '2026-05-15', '14:00:00', '22:00:00', 'sin_cubrir', 'Control 7', 'Plato 7', 22),
-(215, NULL, 7, 2, 'ILUMINA', '2026-05-15', '14:00:00', '22:00:00', 'sin_cubrir', 'Control 7', 'Plato 7', 22),
-(216, NULL, 7, 2, 'EVS', '2026-05-15', '14:00:00', '22:00:00', 'sin_cubrir', 'Control 7', 'Plato 7', 22),
-(217, NULL, 7, 2, 'MULTIPLAY', '2026-05-15', '14:00:00', '22:00:00', 'sin_cubrir', 'Control 7', 'Plato 7', 22),
-(218, NULL, 7, 2, 'ROTULO', '2026-05-15', '14:00:00', '22:00:00', 'sin_cubrir', 'Control 7', 'Plato 7', 22),
-(219, NULL, 7, 2, 'PROMPT', '2026-05-15', '14:00:00', '22:00:00', 'sin_cubrir', 'Control 7', 'Plato 7', 22),
-(220, NULL, 7, 2, 'PRIMERA', '2026-05-15', '14:00:00', '22:00:00', 'sin_cubrir', 'Control 7', 'Plato 7', 22),
-(221, NULL, 7, 2, 'CAMARA', '2026-05-15', '14:00:00', '22:00:00', 'sin_cubrir', 'Control 7', 'Plato 7', 22),
-(222, NULL, 7, 2, 'AUXILIAR', '2026-05-15', '14:00:00', '22:00:00', 'sin_cubrir', 'Control 7', 'Plato 7', 22),
+(211, 6, 7, 2, 'JEFE', '2026-05-15', '14:00:00', '22:00:00', 'cubierto', 'Control 7', 'Plato 7', 22),
+(212, NULL, 7, 2, 'MEZCLA', '2026-05-15', '14:00:00', '22:30:00', 'sin_cubrir', 'Control 7', 'Plato 7', 22),
+(213, 11, 7, 2, 'SONIDO', '2026-05-15', '15:45:00', '22:00:00', 'cubierto', 'Control 7', 'Plato 7', 22),
+(214, NULL, 7, 2, 'CCU', '2026-05-15', '14:00:00', '22:30:00', 'sin_cubrir', 'Control 7', 'Plato 7', 22),
+(215, NULL, 7, 2, 'ILUMINA', '2026-05-15', '14:00:00', '22:30:00', 'sin_cubrir', 'Control 7', 'Plato 7', 22),
+(216, NULL, 7, 2, 'EVS', '2026-05-15', '14:00:00', '22:30:00', 'sin_cubrir', 'Control 7', 'Plato 7', 22),
+(217, NULL, 7, 2, 'MULTIPLAY', '2026-05-15', '14:00:00', '22:30:00', 'sin_cubrir', 'Control 7', 'Plato 7', 22),
+(218, NULL, 7, 2, 'ROTULO', '2026-05-15', '14:00:00', '22:30:00', 'sin_cubrir', 'Control 7', 'Plato 7', 22),
+(219, NULL, 7, 2, 'PROMPT', '2026-05-15', '14:00:00', '22:30:00', 'sin_cubrir', 'Control 7', 'Plato 7', 22),
+(220, NULL, 7, 2, 'PRIMERA', '2026-05-15', '14:00:00', '22:30:00', 'sin_cubrir', 'Control 7', 'Plato 7', 22),
+(221, NULL, 7, 2, 'CAMARA', '2026-05-15', '14:00:00', '22:30:00', 'sin_cubrir', 'Control 7', 'Plato 7', 22),
+(222, NULL, 7, 2, 'AUXILIAR', '2026-05-15', '14:00:00', '22:30:00', 'sin_cubrir', 'Control 7', 'Plato 7', 22),
 (223, 1, 9, 2, 'JEFE', '2026-05-11', '22:00:00', '03:00:00', 'cubierto', 'Control 6', 'Plato 6', 23),
 (224, NULL, 9, 2, 'MEZCLA', '2026-05-11', '22:00:00', '03:00:00', 'sin_cubrir', 'Control 6', 'Plato 6', 23),
 (225, NULL, 9, 2, 'SONIDO', '2026-05-11', '22:00:00', '03:00:00', 'sin_cubrir', 'Control 6', 'Plato 6', 23),
@@ -597,7 +618,153 @@ INSERT INTO `turnos` (`id`, `empleado_id`, `programa_id`, `coordinador_id`, `pue
 (279, NULL, 9, 2, 'PROMPT', '2026-05-15', '22:00:00', '03:00:00', 'sin_cubrir', 'Control 6', 'Plato 6', 27),
 (280, NULL, 9, 2, 'PRIMERA', '2026-05-15', '22:00:00', '03:00:00', 'sin_cubrir', 'Control 6', 'Plato 6', 27),
 (281, NULL, 9, 2, 'CAMARA', '2026-05-15', '22:00:00', '03:00:00', 'sin_cubrir', 'Control 6', 'Plato 6', 27),
-(282, NULL, 9, 2, 'AUXILIAR', '2026-05-15', '22:00:00', '03:00:00', 'sin_cubrir', 'Control 6', 'Plato 6', 27);
+(282, NULL, 9, 2, 'AUXILIAR', '2026-05-15', '22:00:00', '03:00:00', 'sin_cubrir', 'Control 6', 'Plato 6', 27),
+(283, 7, 13, 2, 'MEZCLA', '2026-05-27', '14:00:00', '22:00:00', 'cubierto', 'Control 3', 'Plato 3', NULL),
+(284, 20, 13, 2, 'ILUMINA', '2026-05-27', '14:00:00', '22:00:00', 'cubierto', 'Control 3', 'Plato 3', NULL),
+(285, NULL, 2, 2, 'JEFE', '2026-05-27', '14:00:00', '22:00:00', 'sin_cubrir', 'Control 3', 'Plato 3', 28),
+(287, NULL, 2, 2, 'SONIDO', '2026-05-27', '14:00:00', '22:00:00', 'sin_cubrir', 'Control 3', 'Plato 3', 28),
+(288, NULL, 2, 2, 'CCU', '2026-05-27', '14:00:00', '22:00:00', 'sin_cubrir', 'Control 3', 'Plato 3', 28),
+(289, NULL, 2, 2, 'ILUMINA', '2026-05-27', '14:00:00', '22:00:00', 'sin_cubrir', 'Control 3', 'Plato 3', 28),
+(290, NULL, 2, 2, 'EVS', '2026-05-27', '14:00:00', '22:00:00', 'sin_cubrir', 'Control 3', 'Plato 3', 28),
+(291, NULL, 2, 2, 'MULTIPLAY', '2026-05-27', '14:00:00', '22:00:00', 'sin_cubrir', 'Control 3', 'Plato 3', 28),
+(292, NULL, 2, 2, 'ROTULO', '2026-05-27', '14:00:00', '22:00:00', 'sin_cubrir', 'Control 3', 'Plato 3', 28),
+(293, NULL, 2, 2, 'PROMPT', '2026-05-27', '14:00:00', '22:00:00', 'sin_cubrir', 'Control 3', 'Plato 3', 28),
+(294, NULL, 2, 2, 'PRIMERA', '2026-05-27', '14:00:00', '22:00:00', 'sin_cubrir', 'Control 3', 'Plato 3', 28),
+(295, NULL, 2, 2, 'CAMARA', '2026-05-27', '14:00:00', '22:00:00', 'sin_cubrir', 'Control 3', 'Plato 3', 28),
+(296, NULL, 2, 2, 'AUXILIAR', '2026-05-27', '14:00:00', '22:00:00', 'sin_cubrir', 'Control 3', 'Plato 3', 28),
+(297, 3, 7, 2, 'JEFE', '2026-05-15', '07:15:00', '16:45:00', 'cubierto', 'Control 7', 'Plato 7', 22),
+(298, 13, 7, 2, 'SONIDO', '2026-05-15', '08:00:00', '20:00:00', 'cubierto', 'Control 7', 'Plato 7', 22),
+(299, 21, 12, 2, 'ILUMINA', '2026-05-17', '06:45:00', '12:00:00', 'cubierto', 'Control 2', 'Plato 2', 7),
+(324, NULL, NULL, 2, 'JEFE', '2026-05-17', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 31),
+(325, NULL, NULL, 2, 'MEZCLA', '2026-05-17', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 31),
+(326, NULL, NULL, 2, 'SONIDO', '2026-05-17', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 31),
+(327, NULL, NULL, 2, 'CCU', '2026-05-17', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 31),
+(328, NULL, NULL, 2, 'ILUMINA', '2026-05-17', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 31),
+(329, NULL, NULL, 2, 'EVS', '2026-05-17', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 31),
+(330, NULL, NULL, 2, 'MULTIPLAY', '2026-05-17', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 31),
+(331, NULL, NULL, 2, 'ROTULO', '2026-05-17', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 31),
+(332, NULL, NULL, 2, 'PROMPT', '2026-05-17', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 31),
+(333, NULL, NULL, 2, 'PRIMERA', '2026-05-17', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 31),
+(334, NULL, NULL, 2, 'CAMARA', '2026-05-17', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 31),
+(335, NULL, NULL, 2, 'AUXILIAR', '2026-05-17', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 31),
+(336, NULL, NULL, 2, 'JEFE', '2026-05-18', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 32),
+(337, NULL, NULL, 2, 'MEZCLA', '2026-05-18', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 32),
+(338, NULL, NULL, 2, 'SONIDO', '2026-05-18', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 32),
+(339, NULL, NULL, 2, 'CCU', '2026-05-18', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 32),
+(340, NULL, NULL, 2, 'ILUMINA', '2026-05-18', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 32),
+(341, NULL, NULL, 2, 'EVS', '2026-05-18', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 32),
+(342, NULL, NULL, 2, 'MULTIPLAY', '2026-05-18', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 32),
+(343, NULL, NULL, 2, 'ROTULO', '2026-05-18', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 32),
+(344, NULL, NULL, 2, 'PROMPT', '2026-05-18', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 32),
+(345, NULL, NULL, 2, 'PRIMERA', '2026-05-18', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 32),
+(346, NULL, NULL, 2, 'CAMARA', '2026-05-18', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 32),
+(347, NULL, NULL, 2, 'AUXILIAR', '2026-05-18', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 32),
+(348, NULL, NULL, 2, 'JEFE', '2026-05-19', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 33),
+(349, NULL, NULL, 2, 'MEZCLA', '2026-05-19', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 33),
+(350, NULL, NULL, 2, 'SONIDO', '2026-05-19', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 33),
+(351, NULL, NULL, 2, 'CCU', '2026-05-19', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 33),
+(352, NULL, NULL, 2, 'ILUMINA', '2026-05-19', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 33),
+(353, NULL, NULL, 2, 'EVS', '2026-05-19', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 33),
+(354, NULL, NULL, 2, 'MULTIPLAY', '2026-05-19', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 33),
+(355, NULL, NULL, 2, 'ROTULO', '2026-05-19', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 33),
+(356, NULL, NULL, 2, 'PROMPT', '2026-05-19', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 33),
+(357, NULL, NULL, 2, 'PRIMERA', '2026-05-19', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 33),
+(358, NULL, NULL, 2, 'CAMARA', '2026-05-19', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 33),
+(359, NULL, NULL, 2, 'AUXILIAR', '2026-05-19', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 33),
+(420, NULL, NULL, 2, 'JEFE', '2026-05-21', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 39),
+(421, NULL, NULL, 2, 'MEZCLA', '2026-05-21', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 39),
+(422, NULL, NULL, 2, 'SONIDO', '2026-05-21', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 39),
+(423, NULL, NULL, 2, 'CCU', '2026-05-21', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 39),
+(424, NULL, NULL, 2, 'ILUMINA', '2026-05-21', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 39),
+(425, NULL, NULL, 2, 'EVS', '2026-05-21', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 39),
+(426, NULL, NULL, 2, 'MULTIPLAY', '2026-05-21', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 39),
+(427, NULL, NULL, 2, 'ROTULO', '2026-05-21', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 39),
+(428, NULL, NULL, 2, 'PROMPT', '2026-05-21', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 39),
+(429, NULL, NULL, 2, 'PRIMERA', '2026-05-21', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 39),
+(430, NULL, NULL, 2, 'CAMARA', '2026-05-21', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 39),
+(431, NULL, NULL, 2, 'AUXILIAR', '2026-05-21', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 39),
+(444, NULL, NULL, 2, 'JEFE', '2026-05-21', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 41),
+(445, NULL, NULL, 2, 'MEZCLA', '2026-05-21', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 41),
+(446, NULL, NULL, 2, 'SONIDO', '2026-05-21', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 41),
+(447, NULL, NULL, 2, 'CCU', '2026-05-21', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 41),
+(448, NULL, NULL, 2, 'ILUMINA', '2026-05-21', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 41),
+(449, NULL, NULL, 2, 'EVS', '2026-05-21', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 41),
+(450, NULL, NULL, 2, 'MULTIPLAY', '2026-05-21', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 41),
+(451, NULL, NULL, 2, 'ROTULO', '2026-05-21', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 41),
+(452, NULL, NULL, 2, 'PROMPT', '2026-05-21', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 41),
+(453, NULL, NULL, 2, 'PRIMERA', '2026-05-21', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 41),
+(454, NULL, NULL, 2, 'CAMARA', '2026-05-21', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 41),
+(455, NULL, NULL, 2, 'AUXILIAR', '2026-05-21', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 41),
+(492, NULL, NULL, 2, 'JEFE', '2026-05-20', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 45),
+(493, 9, NULL, 2, 'MEZCLA', '2026-05-20', '00:00:00', '00:00:00', 'cubierto', 'Control 1', 'Plato 1', 45),
+(494, NULL, NULL, 2, 'SONIDO', '2026-05-20', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 45),
+(495, NULL, NULL, 2, 'CCU', '2026-05-20', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 45),
+(496, NULL, NULL, 2, 'ILUMINA', '2026-05-20', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 45),
+(497, NULL, NULL, 2, 'EVS', '2026-05-20', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 45),
+(498, NULL, NULL, 2, 'MULTIPLAY', '2026-05-20', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 45),
+(499, NULL, NULL, 2, 'ROTULO', '2026-05-20', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 45),
+(500, NULL, NULL, 2, 'PROMPT', '2026-05-20', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 45),
+(501, NULL, NULL, 2, 'PRIMERA', '2026-05-20', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 45),
+(502, NULL, NULL, 2, 'CAMARA', '2026-05-20', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 45),
+(503, NULL, NULL, 2, 'AUXILIAR', '2026-05-20', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 1', 'Plato 1', 45),
+(504, 8, NULL, 2, 'MEZCLA', '2026-05-20', '07:15:00', '12:00:00', 'cubierto', 'Control 1', 'Plato 1', 45),
+(505, NULL, 1, 2, 'JEFE', '2026-05-15', '04:30:00', '09:00:00', 'sin_cubrir', 'Control 3', 'Plato 3', 46),
+(506, NULL, 1, 2, 'MEZCLA', '2026-05-15', '04:30:00', '09:00:00', 'sin_cubrir', 'Control 3', 'Plato 3', 46),
+(507, NULL, 1, 2, 'SONIDO', '2026-05-15', '04:30:00', '09:00:00', 'sin_cubrir', 'Control 3', 'Plato 3', 46),
+(508, NULL, 1, 2, 'CCU', '2026-05-15', '04:30:00', '09:00:00', 'sin_cubrir', 'Control 3', 'Plato 3', 46),
+(509, NULL, 1, 2, 'ILUMINA', '2026-05-15', '04:30:00', '09:00:00', 'sin_cubrir', 'Control 3', 'Plato 3', 46),
+(510, NULL, 1, 2, 'EVS', '2026-05-15', '04:30:00', '09:00:00', 'sin_cubrir', 'Control 3', 'Plato 3', 46),
+(511, NULL, 1, 2, 'MULTIPLAY', '2026-05-15', '04:30:00', '09:00:00', 'sin_cubrir', 'Control 3', 'Plato 3', 46),
+(512, NULL, 1, 2, 'ROTULO', '2026-05-15', '04:30:00', '09:00:00', 'sin_cubrir', 'Control 3', 'Plato 3', 46),
+(513, NULL, 1, 2, 'PROMPT', '2026-05-15', '04:30:00', '09:00:00', 'sin_cubrir', 'Control 3', 'Plato 3', 46),
+(514, NULL, 1, 2, 'PRIMERA', '2026-05-15', '04:30:00', '09:00:00', 'sin_cubrir', 'Control 3', 'Plato 3', 46),
+(515, NULL, 1, 2, 'CAMARA', '2026-05-15', '04:30:00', '09:00:00', 'sin_cubrir', 'Control 3', 'Plato 3', 46),
+(516, NULL, 1, 2, 'AUXILIAR', '2026-05-15', '04:30:00', '09:00:00', 'sin_cubrir', 'Control 3', 'Plato 3', 46),
+(517, 4, NULL, 2, 'JEFE', '2026-05-15', '00:00:00', '00:00:00', 'cubierto', 'Control 10', 'Plato 10', 47),
+(518, 9, NULL, 2, 'MEZCLA', '2026-05-15', '00:00:00', '00:00:00', 'cubierto', 'Control 10', 'Plato 10', 47),
+(519, NULL, NULL, 2, 'SONIDO', '2026-05-15', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 10', 'Plato 10', 47),
+(520, NULL, NULL, 2, 'CCU', '2026-05-15', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 10', 'Plato 10', 47),
+(521, NULL, NULL, 2, 'ILUMINA', '2026-05-15', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 10', 'Plato 10', 47),
+(522, NULL, NULL, 2, 'EVS', '2026-05-15', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 10', 'Plato 10', 47),
+(523, NULL, NULL, 2, 'MULTIPLAY', '2026-05-15', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 10', 'Plato 10', 47),
+(524, NULL, NULL, 2, 'ROTULO', '2026-05-15', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 10', 'Plato 10', 47),
+(525, NULL, NULL, 2, 'PROMPT', '2026-05-15', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 10', 'Plato 10', 47),
+(526, NULL, NULL, 2, 'PRIMERA', '2026-05-15', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 10', 'Plato 10', 47),
+(527, NULL, NULL, 2, 'CAMARA', '2026-05-15', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 10', 'Plato 10', 47),
+(528, NULL, NULL, 2, 'AUXILIAR', '2026-05-15', '00:00:00', '00:00:00', 'sin_cubrir', 'Control 10', 'Plato 10', 47),
+(529, 5, 10, 2, 'JEFE', '2026-05-15', '14:15:00', '22:30:00', 'cubierto', 'Control 9', 'Plato 9', 48),
+(530, NULL, 10, 2, 'MEZCLA', '2026-05-15', '14:15:00', '22:30:00', 'sin_cubrir', 'Control 9', 'Plato 9', 48),
+(531, NULL, 10, 2, 'SONIDO', '2026-05-15', '14:15:00', '22:30:00', 'sin_cubrir', 'Control 9', 'Plato 9', 48),
+(532, NULL, 10, 2, 'CCU', '2026-05-15', '14:15:00', '22:30:00', 'sin_cubrir', 'Control 9', 'Plato 9', 48),
+(533, NULL, 10, 2, 'ILUMINA', '2026-05-15', '14:15:00', '22:30:00', 'sin_cubrir', 'Control 9', 'Plato 9', 48),
+(534, NULL, 10, 2, 'EVS', '2026-05-15', '14:15:00', '22:30:00', 'sin_cubrir', 'Control 9', 'Plato 9', 48),
+(535, NULL, 10, 2, 'MULTIPLAY', '2026-05-15', '14:15:00', '22:30:00', 'sin_cubrir', 'Control 9', 'Plato 9', 48),
+(536, NULL, 10, 2, 'ROTULO', '2026-05-15', '14:15:00', '22:30:00', 'sin_cubrir', 'Control 9', 'Plato 9', 48),
+(537, NULL, 10, 2, 'PROMPT', '2026-05-15', '14:15:00', '22:30:00', 'sin_cubrir', 'Control 9', 'Plato 9', 48),
+(538, NULL, 10, 2, 'PRIMERA', '2026-05-15', '14:15:00', '22:30:00', 'sin_cubrir', 'Control 9', 'Plato 9', 48),
+(539, NULL, 10, 2, 'CAMARA', '2026-05-15', '14:15:00', '22:30:00', 'sin_cubrir', 'Control 9', 'Plato 9', 48),
+(540, NULL, 10, 2, 'AUXILIAR', '2026-05-15', '14:15:00', '22:30:00', 'sin_cubrir', 'Control 9', 'Plato 9', 48),
+(541, 5, 13, 2, 'JEFE', '2026-05-15', '09:45:00', '14:00:00', 'cubierto', 'Control 6', 'Plato 6', 49),
+(542, 51, 13, 2, 'MEZCLA', '2026-05-15', '09:45:00', '14:00:00', 'cubierto', 'Control 6', 'Plato 6', 49),
+(543, 14, 13, 2, 'SONIDO', '2026-05-15', '07:15:00', '14:00:00', 'cubierto', 'Control 6', 'Plato 6', 49),
+(544, 17, 13, 2, 'CCU', '2026-05-15', '09:45:00', '14:00:00', 'cubierto', 'Control 6', 'Plato 6', 49),
+(545, NULL, 13, 2, 'ILUMINA', '2026-05-15', '09:45:00', '14:00:00', 'sin_cubrir', 'Control 6', 'Plato 6', 49),
+(546, NULL, 13, 2, 'EVS', '2026-05-15', '09:45:00', '14:00:00', 'sin_cubrir', 'Control 6', 'Plato 6', 49),
+(547, NULL, 13, 2, 'MULTIPLAY', '2026-05-15', '09:45:00', '14:00:00', 'sin_cubrir', 'Control 6', 'Plato 6', 49),
+(548, NULL, 13, 2, 'ROTULO', '2026-05-15', '09:45:00', '14:00:00', 'sin_cubrir', 'Control 6', 'Plato 6', 49),
+(549, NULL, 13, 2, 'PROMPT', '2026-05-15', '09:45:00', '14:00:00', 'sin_cubrir', 'Control 6', 'Plato 6', 49),
+(550, NULL, 13, 2, 'PRIMERA', '2026-05-15', '09:45:00', '14:00:00', 'sin_cubrir', 'Control 6', 'Plato 6', 49),
+(551, NULL, 13, 2, 'CAMARA', '2026-05-15', '09:45:00', '14:00:00', 'sin_cubrir', 'Control 6', 'Plato 6', 49),
+(552, NULL, 13, 2, 'AUXILIAR', '2026-05-15', '09:45:00', '14:00:00', 'sin_cubrir', 'Control 6', 'Plato 6', 49),
+(553, 6, NULL, 2, 'JEFE', '2026-05-15', '07:30:00', '16:00:00', 'cubierto', 'Control 6', 'Plato 6', 50),
+(554, 8, NULL, 2, 'MEZCLA', '2026-05-15', '07:30:00', '16:00:00', 'cubierto', 'Control 6', 'Plato 6', 50),
+(558, NULL, NULL, 2, 'EVS', '2026-05-15', '07:30:00', '16:00:00', 'sin_cubrir', 'Control 6', 'Plato 6', 50),
+(559, NULL, NULL, 2, 'MULTIPLAY', '2026-05-15', '07:30:00', '16:00:00', 'sin_cubrir', 'Control 6', 'Plato 6', 50),
+(560, NULL, NULL, 2, 'ROTULO', '2026-05-15', '07:30:00', '16:00:00', 'sin_cubrir', 'Control 6', 'Plato 6', 50),
+(561, NULL, NULL, 2, 'PROMPT', '2026-05-15', '07:30:00', '16:00:00', 'sin_cubrir', 'Control 6', 'Plato 6', 50),
+(562, NULL, NULL, 2, 'PRIMERA', '2026-05-15', '07:30:00', '16:00:00', 'sin_cubrir', 'Control 6', 'Plato 6', 50),
+(563, NULL, NULL, 2, 'CAMARA', '2026-05-15', '07:30:00', '16:00:00', 'sin_cubrir', 'Control 6', 'Plato 6', 50),
+(564, NULL, NULL, 2, 'AUXILIAR', '2026-05-15', '07:30:00', '16:00:00', 'sin_cubrir', 'Control 6', 'Plato 6', 50);
 
 -- --------------------------------------------------------
 
@@ -620,24 +787,35 @@ CREATE TABLE `turnos_bloque` (
 --
 
 INSERT INTO `turnos_bloque` (`id`, `control_nombre`, `fecha`, `programa_id`, `hora_inicio`, `hora_fin`, `coordinador_id`) VALUES
-(1, 'Control 3', '2026-05-18', 8, '17:00:00', '22:00:00', 2),
+(1, 'Control 3', '2026-05-18', 8, '15:00:00', '22:00:00', 2),
 (2, 'Control 3', '2026-05-19', 8, '17:00:00', '22:00:00', 2),
 (3, 'Control 3', '2026-05-20', 8, '17:00:00', '22:00:00', 2),
 (4, 'Control 3', '2026-05-21', 8, '17:00:00', '22:00:00', 2),
 (5, 'Control 3', '2026-05-22', 8, '17:00:00', '22:00:00', 2),
 (6, 'Control 2', '2026-05-16', 12, '09:00:00', '22:00:00', 2),
 (7, 'Control 2', '2026-05-17', 12, '09:00:00', '22:00:00', 2),
-(9, 'Control 5', '2026-05-15', 14, '13:15:00', '18:30:00', 2),
 (18, 'Control 7', '2026-05-11', 7, '14:00:00', '22:00:00', 2),
 (19, 'Control 7', '2026-05-12', 7, '14:00:00', '22:00:00', 2),
 (20, 'Control 7', '2026-05-13', 7, '14:00:00', '22:00:00', 2),
 (21, 'Control 7', '2026-05-14', 7, '14:00:00', '22:00:00', 2),
-(22, 'Control 7', '2026-05-15', 7, '14:00:00', '22:00:00', 2),
+(22, 'Control 7', '2026-05-15', 7, '14:00:00', '22:30:00', 2),
 (23, 'Control 6', '2026-05-11', 9, '22:00:00', '03:00:00', 2),
 (24, 'Control 6', '2026-05-12', 9, '22:00:00', '03:00:00', 2),
 (25, 'Control 6', '2026-05-13', 9, '22:00:00', '03:00:00', 2),
 (26, 'Control 6', '2026-05-14', 9, '22:00:00', '03:00:00', 2),
-(27, 'Control 6', '2026-05-15', 9, '22:00:00', '03:00:00', 2);
+(27, 'Control 6', '2026-05-15', 9, '22:00:00', '03:00:00', 2),
+(28, 'Control 3', '2026-05-27', 2, '14:00:00', '22:00:00', 2),
+(31, 'Control 1', '2026-05-17', NULL, '00:00:00', '00:00:00', 2),
+(32, 'Control 1', '2026-05-18', NULL, '00:00:00', '00:00:00', 2),
+(33, 'Control 1', '2026-05-19', NULL, '00:00:00', '00:00:00', 2),
+(39, 'Control 1', '2026-05-21', NULL, '00:00:00', '00:00:00', 2),
+(41, 'Control 1', '2026-05-21', NULL, '00:00:00', '00:00:00', 2),
+(45, 'Control 1', '2026-05-20', NULL, '00:00:00', '00:00:00', 2),
+(46, 'Control 3', '2026-05-15', 1, '04:30:00', '09:00:00', 2),
+(47, 'Control 10', '2026-05-15', NULL, '00:00:00', '00:00:00', 2),
+(48, 'Control 9', '2026-05-15', 10, '14:15:00', '22:30:00', 2),
+(49, 'Control 6', '2026-05-15', 13, '09:45:00', '14:00:00', 2),
+(50, 'Control 6', '2026-05-15', NULL, '07:30:00', '16:00:00', 2);
 
 -- --------------------------------------------------------
 
@@ -664,7 +842,7 @@ INSERT INTO `usuarios` (`id`, `nombre`, `email`, `password`, `rol`, `estado`, `f
 (1, 'Gonzalo', 'gonzalo@turnostv.com', '$2y$10$59Yh2Ak4eqnPyVG1/kttzODSmpl2wOaLxGOl1Nn3VoXyJd4G7dvLC', 'coordinador', 'activo', NULL, NULL),
 (3, 'Administrador', 'admin@turnostv.com', '$2y$10$KYLhRLlqEYIEF.Jm42GdU.SzA1tVG9PoP76YvSxyYAMbUWkEoHlUq', 'administrador', 'activo', NULL, NULL),
 (4, 'Gonzalo Martín Segovia', 'coord@turnostv.com', '$2y$10$hx5HK3Zyz5QmUpFTAbz1.u.Q7mc/R1dG3LW4prfz8/qVkCuV.ir7K', 'coordinador', 'activo', 'uploads/1778681918_CabezaPrueba.png', '666666888'),
-(5, 'Nombre Director', 'director@turnostv.com', '$2y$10$0hLeL6LwYRtQDHltcXvvU.96CltYE.w5UAzZP/yKUDspBi7Zn5Wq6', 'director', 'activo', NULL, '585258525'),
+(5, 'MiDirector Apellido', 'director@turnostv.com', '$2y$10$0hLeL6LwYRtQDHltcXvvU.96CltYE.w5UAzZP/yKUDspBi7Zn5Wq6', 'director', 'activo', NULL, '585258525'),
 (6, 'El mejor empleado', 'empleado@turnostv.com', '$2y$10$KAaXJT2u0htr8o7v1Gz7gOvYG/hrQ8jdvwEVkSnt//y8jC6X.R8ue', 'empleado', 'activo', NULL, ''),
 (7, 'Jefe Técnico 1', 'jefe1@turnostv.com', '$2y$10$gNsKy/ODvyDbMEnLuhq02OYyfpJbPhg94V96np6UcmjXWh5MYDzgq', 'empleado', 'activo', NULL, NULL),
 (8, 'Jefe Técnico 2', 'jefe2@turnostv.com', '$2y$10$4hv6TA1DDDnlWZmRNdxHoeRucQp/FhNi2Xv9ImFKpdq68kN5yfr2m', 'empleado', 'activo', NULL, NULL),
@@ -743,10 +921,10 @@ INSERT INTO `vacaciones` (`id`, `empleado_id`, `fecha_inicio`, `fecha_fin`, `dia
 (3, 1, '2026-05-25', '2026-05-29', 5, '', 'en_proceso', '2026-05-11 17:18:02'),
 (4, 7, '2026-05-21', '2026-05-21', 1, 'Médico: tengo medico a las 11', 'rechazada', '2026-05-11 21:05:29'),
 (5, 7, '2026-05-20', '2026-05-21', 2, 'Asunto propio', 'en_proceso', '2026-05-11 21:05:36'),
-(6, 7, '2026-05-13', '2026-05-24', 12, 'me quiero ir de vacaciones', 'pendiente', '2026-05-11 21:05:54'),
+(6, 7, '2026-05-13', '2026-05-24', 12, 'me quiero ir de vacaciones', 'en_proceso', '2026-05-11 21:05:54'),
 (7, 1, '2026-05-25', '2026-05-25', 1, 'Asunto propio', 'en_proceso', '2026-05-12 17:42:20'),
 (8, 1, '2026-06-26', '2026-07-05', 10, '', 'pendiente', '2026-05-12 17:42:31'),
-(9, 1, '2026-05-23', '2026-05-28', 6, 'Asunto propio: hola, ¿cómo estás? quiero asunto propioooooooooo', 'pendiente', '2026-05-12 17:44:45'),
+(9, 1, '2026-05-23', '2026-05-28', 6, 'Asunto propio: hola, ¿cómo estás? quiero asunto propioooooooooo', 'aprobada', '2026-05-12 17:44:45'),
 (10, 1, '2026-05-14', '2026-05-23', 10, 'asda fa fasf asf', 'pendiente', '2026-05-14 20:07:57');
 
 --
@@ -897,7 +1075,7 @@ ALTER TABLE `coordinadores`
 -- AUTO_INCREMENT de la tabla `dias_extra`
 --
 ALTER TABLE `dias_extra`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 
 --
 -- AUTO_INCREMENT de la tabla `directores`
@@ -915,13 +1093,13 @@ ALTER TABLE `empleados`
 -- AUTO_INCREMENT de la tabla `festivos`
 --
 ALTER TABLE `festivos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de la tabla `peticiones`
 --
 ALTER TABLE `peticiones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `programas`
@@ -933,31 +1111,31 @@ ALTER TABLE `programas`
 -- AUTO_INCREMENT de la tabla `solicitudes`
 --
 ALTER TABLE `solicitudes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `solicitud_fechas`
 --
 ALTER TABLE `solicitud_fechas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `solicitud_puestos`
 --
 ALTER TABLE `solicitud_puestos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT de la tabla `turnos`
 --
 ALTER TABLE `turnos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=283;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=565;
 
 --
 -- AUTO_INCREMENT de la tabla `turnos_bloque`
 --
 ALTER TABLE `turnos_bloque`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`

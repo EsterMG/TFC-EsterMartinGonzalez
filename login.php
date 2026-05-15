@@ -130,12 +130,12 @@ $conn->close();
         </p>
       </div>
     </div>
-    
+
   </header>
 
   <div class="login-body">
     <div class="login-box">
-       <img src="img/favicon.png" alt="Logo TurnosTV" class="login-logo-img">
+      <img src="img/favicon.png" alt="Logo TurnosTV" class="login-logo-img">
       <h2 class="login-box-title">Bienvenido</h2>
       <p class="login-box-sub">Introduce tus datos de usuario para acceder</p>
 
@@ -161,7 +161,7 @@ $conn->close();
       </div>
     </div>
 
-  </div> 
+  </div>
   <footer class="site-footer">
     <div>TurnosTV © 2026</div>
     <div>Trabajo Final de Curso DAW</div>

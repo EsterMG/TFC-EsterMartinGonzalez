@@ -2,27 +2,27 @@
 
 /* Variables globales */
 :root {
-  --fondo: #F5F4F0;
-  --blanco: #FFFFFF;
+  --fondo: #f5f4f0;
+  --blanco: #ffffff;
   --texto: #1a1a1a;
   --suave: #888;
-  --borde: #DDDBD3;
+  --borde: #dddbd3;
   --sidebar-w: 210px;
 
   /* Colores de rol (para badges) */
   --rol-admin-bg: rgba(107, 33, 168, 0.2);
-  --rol-admin-color: #D8B4FE;
+  --rol-admin-color: #d8b4fe;
   --rol-coord-bg: rgba(180, 83, 9, 0.25);
-  --rol-coord-color: #FCD34D;
+  --rol-coord-color: #fcd34d;
   --rol-director-bg: rgba(29, 78, 216, 0.25);
-  --rol-director-color: #93C5FD;
+  --rol-director-color: #93c5fd;
   --rol-empleado-bg: rgba(22, 163, 74, 0.25);
-  --rol-empleado-color: #86EFAC;
+  --rol-empleado-color: #86efac;
 
   /* Estados */
-  --ok: #16A34A;
-  --peligro: #B91C1C;
-  --aviso: #D97706;
+  --ok: #16a34a;
+  --peligro: #b91c1c;
+  --aviso: #d97706;
 }
 
 /* Reset mínimo */
@@ -63,21 +63,23 @@ body {
   letter-spacing: -1px;
   color: #fff;
 }
-.logo-rol{
-    display:flex;
-    align-items:center;
-    gap:10px;              
-    justify-content:flex-start;
-    margin-left:10px;     
+.logo-rol {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-start;
+  margin-left: 10px;
 }
 
-.logo-img{
-    width:28px;
-    height:28px;
-    object-fit:contain;
+.logo-img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
 }
 .login-box {
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.08),
+    0 1px 4px rgba(0, 0, 0, 0.04);
   border: 1px solid var(--borde);
   background: #ffffff;
 }
@@ -150,7 +152,9 @@ nav {
   color: rgba(255, 255, 255, 0.45);
   font-size: 20px;
   margin-bottom: 2px;
-  transition: background 0.15s, color 0.15s;
+  transition:
+    background 0.15s,
+    color 0.15s;
 }
 
 .nav-link:hover {
@@ -393,7 +397,9 @@ nav {
   font-family: sans-serif;
   color: var(--texto);
   outline: none;
-  transition: border-color 0.15s, background 0.15s;
+  transition:
+    border-color 0.15s,
+    background 0.15s;
 }
 
 .form-field input:focus,
@@ -530,7 +536,6 @@ nav {
   text-align: center;
   margin-bottom: 12px;
 }
-
 
 /* MINI PERFIL SIDEBAR  */
 .sidebar-profile {

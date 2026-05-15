@@ -1,7 +1,7 @@
 /* panel_coordinador.css */
 
 :root {
-  --peligro: #B91C1C;
+  --peligro: #b91c1c;
 }
 
 /* SOLO ajustes específicos del panel */
@@ -95,9 +95,7 @@
 /* RESPONSIVE SOLO PANEL */
 
 @media (max-width: 768px) {
-
   .panel-grid {
-
     grid-template-columns: 1fr 1fr !important;
   }
 

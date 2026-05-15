@@ -1,44 +1,40 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const input = document.getElementById("fotoInput");
+  const preview = document.getElementById("previewFoto");
 
-    const input = document.getElementById("fotoInput");
-    const preview = document.getElementById("previewFoto");
+  if (!input || !preview) return;
 
-    if (!input || !preview) return;
+  input.addEventListener("change", function () {
+    const file = this.files[0];
 
-    input.addEventListener("change", function () {
+    if (!file) return;
 
-        const file = this.files[0];
+    // validar tipo
+    if (!file.type.startsWith("image/")) {
+      alert("Solo se permiten imágenes");
+      input.value = "";
+      return;
+    }
 
-        if (!file) return;
+    // validar tamaño
+    const maxSize = 2 * 1024 * 1024;
 
-        // validar tipo
-        if (!file.type.startsWith("image/")) {
-            alert("Solo se permiten imágenes");
-            input.value = "";
-            return;
-        }
+    if (file.size > maxSize) {
+      alert("La imagen supera 2MB");
+      input.value = "";
+      return;
+    }
 
-        // validar tamaño
-        const maxSize = 2 * 1024 * 1024;
+    const reader = new FileReader();
 
-        if (file.size > maxSize) {
-            alert("La imagen supera 2MB");
-            input.value = "";
-            return;
-        }
+    reader.onload = function (e) {
+      preview.src = e.target.result;
+    };
 
-        const reader = new FileReader();
+    reader.onerror = function () {
+      alert("Error al cargar la imagen");
+    };
 
-        reader.onload = function (e) {
-            preview.src = e.target.result;
-        };
-
-        reader.onerror = function () {
-            alert("Error al cargar la imagen");
-        };
-
-        reader.readAsDataURL(file);
-
-    });
-
+    reader.readAsDataURL(file);
+  });
 });

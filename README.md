@@ -44,7 +44,7 @@ TurnosTV centraliza la gestión de turnos rotativos de técnicos de televisión 
 **1. Clonar o descargar el repositorio**
 
 ```bash
-git clone https://github.com/EsterMG/TFG-EsterMartinGonzalez
+git clone https://github.com/EsterMG/TFC-EsterMartinGonzalez
 ```
 
 **2. Copiar la carpeta al directorio de XAMPP**
