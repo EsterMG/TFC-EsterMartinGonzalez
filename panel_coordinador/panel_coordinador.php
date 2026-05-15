@@ -100,6 +100,7 @@ $meses_es = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'ag
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TurnosTV — Coordinador</title>
+  <link rel="icon" type="image/png" href="../img/favicon.png">
   <link rel="stylesheet" href="../fragmentos/styles/base.css">
   <link rel="stylesheet" href="styles/panel_coordinador.css">
 </head>

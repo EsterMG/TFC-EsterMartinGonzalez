@@ -110,6 +110,7 @@ $titulo_pagina = 'Panel de Director';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TurnosTV — Director</title>
+  <link rel="icon" type="image/png" href="../img/favicon.png">
   <link rel="stylesheet" href="../fragmentos/styles/base.css">
   <link rel="stylesheet" href="styles/panel_director.css">
 </head>

@@ -118,6 +118,7 @@ $ctrl_url = $_GET['ctrl'] ?? '';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TurnosTV — Horarios</title>
+  <link rel="icon" type="image/png" href="../img/favicon.png">
   <link rel="stylesheet" href="../fragmentos/styles/base.css">
   <link rel="stylesheet" href="styles/horarios.css">
   <?php if ($solicitud_panel): ?>
@@ -636,7 +637,7 @@ $ctrl_url = $_GET['ctrl'] ?? '';
                 required><?= $opHora ?></select></div>
           </div>
           <div class="pop-btns"><button type="button" class="pop-c" onclick="cerrarNuevo()">Cancelar</button><button
-              type="submit" class="pop-s">Crear turnos →</button></div>
+              type="button" class="pop-s" onclick="confirmarCrearTurno()">Crear turnos →</button></div>
         </form>
       </div>
       <div id="nt-panel-avanzado" style="display:none">
@@ -722,7 +723,7 @@ $ctrl_url = $_GET['ctrl'] ?? '';
             </div>
           </div>
           <div class="pop-btns"><button type="button" class="pop-c" onclick="cerrarNuevo()">Cancelar</button><button
-              type="submit" class="pop-s"> Crear y asignar →</button></div>
+              type="button" class="pop-s" onclick="confirmarCrearTurnoAvanzado()"> Crear y asignar →</button></div>
         </form>
       </div>
     </div>

@@ -113,6 +113,7 @@ $conn->close();
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TurnosTV — Inicia sesión</title>
+  <link rel="icon" type="image/png" href="img/favicon.png">
   <link rel="stylesheet" href="fragmentos/styles/base.css">
   <link rel="stylesheet" href="login.css">
 </head>
@@ -134,6 +135,7 @@ $conn->close();
 
   <div class="login-body">
     <div class="login-box">
+       <img src="img/favicon.png" alt="Logo TurnosTV" class="login-logo-img">
       <h2 class="login-box-title">Bienvenido</h2>
       <p class="login-box-sub">Introduce tus datos de usuario para acceder</p>
 
@@ -155,11 +157,11 @@ $conn->close();
         Si no dispones de usuario para acceder, habla con tu responsable.
       </div>
       <div class="login-credit">
-        Trabajo Final de Curso DAW de Ester Martín González
+        Trabajo Final de Grado DAW de Ester Martín González
       </div>
     </div>
 
-  </div>
+  </div> 
   <footer class="site-footer">
     <div>TurnosTV © 2026</div>
     <div>Trabajo Final de Curso DAW</div>

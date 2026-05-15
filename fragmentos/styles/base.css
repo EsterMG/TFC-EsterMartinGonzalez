@@ -63,13 +63,37 @@ body {
   letter-spacing: -1px;
   color: #fff;
 }
+.logo-rol{
+    display:flex;
+    align-items:center;
+    gap:10px;              
+    justify-content:flex-start;
+    margin-left:10px;     
+}
 
+.logo-img{
+    width:28px;
+    height:28px;
+    object-fit:contain;
+}
+.login-box {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--borde);
+  background: #ffffff;
+}
+.login-logo-img {
+  display: block;
+  margin: 0 auto 12px auto;
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
 /* Badge de rol (color según clase) */
 .rol-badge {
   font-size: 15px;
   font-weight: 600;
   padding: 3px 10px;
-  margin: 0 0 10px 30px;
+  margin: 0;
   width: fit-content;
   border-radius: 4px;
 }
@@ -223,6 +247,7 @@ nav {
 .body {
   padding: 28px;
   flex: 1;
+  background: linear-gradient(135deg, #f0ede6 0%, #e8e4db 100%);
 }
 
 /* CARDS */

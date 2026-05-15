@@ -351,6 +351,7 @@ $total_fin = count($vac_finalizadas) + count($pet_finalizadas) + count($solicitu
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peticiones — TurnosTV</title>
+    <link rel="icon" type="image/png" href="../img/favicon.png">
     <link rel="stylesheet" href="../fragmentos/styles/base.css">
     <link rel="stylesheet" href="styles/peticiones.css">
 </head>

@@ -1101,9 +1101,13 @@
 /* Layout con panel lateral cuando hay solicitud activa */
 .body {
   display: grid;
-  grid-template-columns: 1fr 300px;
+  grid-template-columns: 1fr;
   gap: 16px;
   align-items: start;
+}
+
+.body:has(.sol-panel) {
+  grid-template-columns: 1fr 300px;
 }
 
 .hor-main {

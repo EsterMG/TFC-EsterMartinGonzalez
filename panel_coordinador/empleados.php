@@ -249,7 +249,8 @@ $puestos_canonicos = ['JEFE', 'MEZCLA', 'SONIDO', 'CCU', 'ILUMINA', 'EVS', 'MULT
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empleados</title>
+    <title>TurnosTV — Empleados</title>
+    <link rel="icon" type="image/png" href="../img/favicon.png">
     <link rel="stylesheet" href="../fragmentos/styles/base.css">
     <link rel="stylesheet" href="styles/empleados.css">
 </head>
